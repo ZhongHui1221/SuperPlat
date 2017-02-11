@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<title>信息变更 - 待提交</title>
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/iframe_org.css" />
+	</head>
+	<body>
+		<div class="container_card">
+			<div class="main_tabs">
+				<div class="container">
+					<ul class="main_tabs_list">
+						<li><a class="active" href="">待提交</a><span class="sanjx_jt active"></span></li>
+						<li><a href="./xinxigengz_daishenhe.htm">待审核</a><span class="sanjx_jt"></span></li>
+						<li><a href="./xinxigengz_shenhezhong.htm">审核中</a><span class="sanjx_jt "></span></li>
+						<li><a href="./xinxigengz_yishenhe.htm">已审核</a><span class="sanjx_jt"></span></li>
+						<li><a href="./xinxigengz_yishenxiao.htm">已生效</a><span class="sanjx_jt"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="toolbar_wapper container">
+				<div class="toolbar_box">
+					<div class="toolbar_left fl">
+						<div class="toobar_chosethis fl">
+							<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+							<div class="fl">选择当前页</div>
+						</div>
+						<div class="toobar_search fl">
+							<form class="query_form" action="" method="post">
+								<input name="keyvalueStr" type="text" value="" />
+								<button class="toobar_search_btn" type="submit"><span></span></button>
+							</form>
+							<div class="searchcard_tip">请输入要查找的内容</div>
+						</div>
+						<div class="toobar_moresearch fl">更多筛选条件</div>
+					</div>
+					<div class="toolbar_right fr">
+						<div class="toolbar_fy fl">
+							<ul>
+								<li class="toobar_jt toobar_jtll">
+									<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+								</li>
+								<li class="toobar_jt toobar_jtl">
+									<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+								</li>
+								<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+								<li style="width: 10px">/</li>
+								<li>100</li>
+								<li class="toobar_jt toobar_jtr">
+									<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+								</li>
+								<li class="toobar_jt toobar_jtrr">
+									<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="toolbar_box" style="margin-bottom: 4px">
+					<div class="toolbar_left fl">
+						<ul class="yewu_action">
+							<li class="yewu_shanchu toolbar_item"><a href="javascript:void(0)">删除</a><span></span></li>
+							<li class="toobar_line"></li>
+							<li class="yewu_scwsp toolbar_item"><a href="javascript:void(0)">送财务审批</a><span></span></li>
+							<li class="toobar_line"></li>
+							<li class="yewu_szcglysp toolbar_item"><a href="javascript:void(0)">送资产管理员审批</a><span></span></li>
+						</ul>
+					</div>
+					<div class="toolbar_right fr">
+						<ul class="gongneng_list fl">
+							<li class="toolbar_dc toolbar_item">导出<span></span></li>
+							<li class="toobar_line"></li>
+							<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+						</ul>
+						<div class="toolbar_tips">您尚未勾选任何数据！</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_wapper container">
+				<div class="list_wapper_header">
+					<table class="list_table_header">
+						<colgroup>
+							<col width="4%"></col>
+							<col width="3%"></col>
+							<col width="7%"></col>
+							<col width="8%"></col>
+							<col width="8%"></col>
+							<col width="9%"></col>
+							<col width="10%"></col>
+							<col width="8%"></col>
+							<col width="6%"></col>
+							<col width="7%"></col>
+							<col width="6%"></col>
+							<col width="5%"></col>
+							<col width="9%"></col>
+							<col width="10%"></col>
+						</colgroup>
+						<tr>
+							<td><div class="xuhao_header">序号</div></td>
+							<td></td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									更正方式
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									资产名称
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									资产编号
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									购置日期
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									财务入账日期
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									凭证号
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									面积
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									折旧年限
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									价值
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									数量
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td class="sort">
+								<a href="javascript: void(0)">
+									更正原因
+									<span class="card_order_jt" column=""></span>
+								</a>
+							</td>
+							<td>操作</td>
+						</tr>
+					</table>
+				</div>
+				<div class="list_wapper_content">
+					<table>
+						<colgroup>
+							<col width="4%"></col>
+							<col width="3%"></col>
+							<col width="7%"></col>
+							<col width="8%"></col>
+							<col width="8%"></col>
+							<col width="9%"></col>
+							<col width="10%"></col>
+							<col width="8%"></col>
+							<col width="6%"></col>
+							<col width="7%"></col>
+							<col width="6%"></col>
+							<col width="5%"></col>
+							<col width="9%"></col>
+							<col width="5%"></col>
+							<col width="5%"></col>
+						</colgroup>
+						<!-- tr 分为 修改和删除 2种类型 -->
+						<tr class="list_xxgz">
+							<td class="xuhao">1</td>
+							<td class="list_td_label">
+								<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+							</td>
+							<td>修改</td>
+							<td><a href="javascript: void(0)">笔记本电脑</a></td>
+							<td>PF20160</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">2016-11-12</div>
+								<div class="xxgz_current_info">2017-11-12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">2016-11-12</div>
+								<div class="xxgz_current_info">2017-11-12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1234</div>
+								<div class="xxgz_current_info">12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">100</div>
+								<div class="xxgz_current_info">90</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info"></div>
+								<div class="xxgz_current_info"></div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1000</div>
+								<div class="xxgz_current_info">200</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1</div>
+								<div class="xxgz_current_info">2</div>
+							</td>
+							<td>
+								<div class="gzyy_info">更正原因是网上购物淘宝</div>
+							</td>
+							<td><a class="xxgz_edit" href="javascript:void(0)">编辑</a></td>
+							<td><a class="xxgz_delete" href="javascript:void(0)">删除</a></td>
+						</tr>
+						<tr class="list_xxgz tr_color">
+							<td class="xuhao">1</td>
+							<td class="list_td_label">
+								<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+							</td>
+							<td>修改</td>
+							<td><a href="javascript: void(0)">笔记本电脑</a></td>
+							<td>PF20160</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">2016-11-12</div>
+								<div class="xxgz_current_info">2017-11-12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">2016-11-12</div>
+								<div class="xxgz_current_info">2017-11-12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1234</div>
+								<div class="xxgz_current_info">12</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">100</div>
+								<div class="xxgz_current_info">90</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info"></div>
+								<div class="xxgz_current_info"></div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1000</div>
+								<div class="xxgz_current_info">200</div>
+							</td>
+							<td class="border_td">
+								<div class="xxgz_before_info">1</div>
+								<div class="xxgz_current_info">2</div>
+							</td>
+							<td>
+								<div class="gzyy_info">更正原因是网上购物淘宝</div>
+							</td>
+							<td><a class="xxgz_edit" href="javascript:void(0)">编辑</a></td>
+							<td><a class="xxgz_delete" href="javascript:void(0)">删除</a></td>
+						</tr>
+						<tr class="list_xxgz">
+							<td class="xuhao">1</td>
+							<td class="list_td_label">
+								<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+							</td>
+							<td>删除</td>
+							<td><a href="javascript: void(0)">笔记本电脑</a></td>
+							<td>PF20160</td>
+							<td>2017-11-12</td>
+							<td>2017-11-12</td>
+							<td>1234</td>
+							<td>100</td>
+							<td>1</td>
+							<td>20</td>
+							<td>1</td>
+							<td>
+								<div class="gzyy_info">更正原因是网上购物淘宝</div>
+							</td>
+							<td><a class="xxgz_edit" href="javascript:void(0)">编辑</a></td>
+							<td><a class="xxgz_delete" href="javascript:void(0)">删除</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="total_price">
+			<div class="container">
+				您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+			</div>
+		</div>
+		<!-- 编辑弹出框 写在了当前页面 -->
+		<div class="xxgz_edit_container">
+			<div class="ifm_in_modal_header">
+				<div class="ifm_in_modal_info">编辑信息更正</div>
+				<div class="ifm_about_icon"></div>
+				<div class="ifm_close"></div>
+			</div>
+			<div class="xxgz_edit_wapper">
+				<table class="xxgz_edit_table">
+					<tr>
+						<td class="td_item">资产名称：</td>
+						<td class="td_info">U盘</td>
+						<td class="td_info">资产编号：TY123221322112</td>
+					</tr>
+					<tr>
+						<td class="td_item"><span>*</span>更正方式：</td>
+						<td class="td_info">
+							<select class="td_info_select">
+								<option value="edit">修改</option>
+								<option value="delete">删除</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_item"></td>
+						<td class="td_info" style="text-align: center">更正前</td>
+						<td class="td_info" style="text-align: center">更正后</td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">购置日期：</td>
+						<td class="td_info td_i_disabled">2016-11-07</td>
+						<td class="td_info"><input type="text" id="gzrqDate" name="gzrqDate"></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">财务入账：</td>
+						<td class="td_info td_i_disabled">2016-11-07</td>
+						<td class="td_info"><input type="text" id="cwrzDate" name="cwrzDate"></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">凭证号：</td>
+						<td class="td_info td_i_disabled">100</td>
+						<td class="td_info"><input type="text" id="" name=""></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">面积：</td>
+						<td class="td_info td_i_disabled">100</td>
+						<td class="td_info"><input type="text" id="" name=""></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">折旧年限：</td>
+						<td class="td_info td_i_disabled">10</td>
+						<td class="td_info"><input type="text" id="" name=""></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">数量：</td>
+						<td class="td_info td_i_disabled">1</td>
+						<td class="td_info"><input type="text" id="" name=""></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">价值：</td>
+						<td class="td_info td_i_disabled">5000.00</td>
+						<td class="td_info"><input type="text" id="" name=""></td>
+					</tr>
+					<tr class="tr_item">
+						<td class="td_item">更正原因：</td>
+						<td class="td_info td_info_text" colspan="2"><textarea form="">1111111111</textarea></td>
+					</tr>
+				</table>
+			</div>
+			<div class="xxgz_bottom">
+				<input class="iframe_btn xxgz_btn_qd" type="button" value="确定">
+				<div class="iframe_btn xxgz_btn_qx">取消</div>
+			</div>
+		</div>
+	<!-- 引入base_org_js.js -->
+
+	</body>
+</html>

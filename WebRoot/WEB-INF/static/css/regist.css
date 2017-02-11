@@ -1,0 +1,307 @@
+body{
+    font-family: '微软雅黑';
+}
+
+.header{
+    width:100%;
+    height:70px;
+    line-height:70px;
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:8px;
+    text-align:center;
+    background:url(../images/re-head-bg.png) repeat-x;
+    background-size:cover;
+    position: relative;
+}
+.header p{
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 1em;
+    color: #e6e6e6;
+    position: absolute;
+    bottom: 10px;
+    right: 52px;
+}
+.header p a{
+    color:#ff3034;
+}
+.header p a:hover{
+    text-decoration: underline;
+}
+.main{
+    min-width:480px;
+}
+form{
+    width:900px;
+    margin:14px auto;
+    padding:8px;
+    color:#333;
+}
+.re-main tr{
+    height:48px;
+}
+.re-main tr td{
+    width:300px;
+    font-size:14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.re-main tr td:first-child{
+    padding-right:8px;
+    text-align: right;
+    font-size:14px;
+    letter-spacing: 2px;
+}
+.re-main tr td:first-child+td{
+    line-height:32px;
+}
+
+.re-main tr td:first-child+td input,.re-main tr td:first-child+td select,.re-main tr td:first-child+td .re-inp{
+    width:293px;
+    height:30px;
+    padding:0 0 0 3px;
+    line-height:30px;
+    border:1px solid #b3b3b3;
+    border-radius:2px;
+    font-size:14px;
+}
+.re-main tr td:first-child+td select{
+    width:298px;
+    height:32px;
+    line-height:32px;
+}
+.re-inp{
+    position: relative;
+    background: url(../images/op-down.png) no-repeat 281px 10px;
+    cursor:pointer;
+}
+.re-main tr td:first-child+td .re-inp input{
+    width:90%;
+    height:30px;
+    font-size:14px;
+    border:none;
+    outline:none;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.re-inp .re-toggle{
+    width:10%;
+    height:30px;
+    position: absolute;
+    top:0;
+    right:0;
+}
+.re-inp .re-checkbox{
+    position: absolute;
+    top: 31px;
+    left: -1px;
+    background: #fff;
+    width: 296px;
+    min-height: 100px;
+    padding: 6px 0;
+    border: 1px solid #ccc;
+    border-top:none;
+    box-shadow:0 0 3px #ccc;
+    display: none;
+}
+.re-inp .re-checkbox li{
+    font-size:13px;
+    color:#333;
+    padding:0 8px;
+    height:26px;
+    position: relative;
+}
+.re-inp .re-checkbox li:hover{
+    background:#cbe6ff ;
+}
+.re-inp .re-checkbox li span:first-child+span{
+    height: 26px;
+    width: 200px;
+    display: inline-block;
+    line-height: 26px;
+    position: absolute;
+    top:0;
+    left:34px;
+}
+.re-inp .re-checkbox li span:first-child{
+    width:18px;
+    height:26px;
+    margin-right: 8px;
+    display: inline-block;
+    background: url(../images/re-checkbox-bg.png) no-repeat 0 4px;
+}
+.re-inp .re-checkbox li.checked span:first-child{
+    background-position: -28px 4px;
+}
+
+.l-text{
+    height:30px;
+    border:none;
+}
+.l-trigger,.l-trigger-hover,.l-trigger-pressed{
+    width:30px;
+    height:28px;
+    border:none;
+    background:transparent;
+}
+.l-trigger-icon,.l-trigger-hover .l-trigger-icon{
+    background:url(../images/op-down.png) no-repeat 15px 10px;/*2017-01-10-2*/
+}
+.re-main tr td:first-child+td+td{
+    color:#ff3034;
+    padding-left:15px;
+    font-size:14px;
+    position: relative;
+}
+.re-main tr td:first-child+td+td img{
+    margin:0 5px 0 13px;
+    position: absolute;
+    top:6px;
+}
+.re-main tr td:first-child+td+td span{
+    margin-left:38px;
+}
+tr.po-adjust td:first-child,tr.po-adjust td:first-child+td+td{
+    position: relative;
+    top:-10px;
+}
+tr.po-adjust td:first-child+td+td img{
+    top:16px;
+}
+.re-main table{
+    width:250px;
+    margin:0 auto;
+}
+.pwd_strength{
+    width:108px;
+    height:10px;
+    margin:0 auto;
+    border:1px solid #ddd;
+    border-radius:6px;
+    background:#f0f0f0;
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    left: 57px;
+}
+.pwd_strength:before,.pwd_strength:after{
+    position:absolute;
+    top: -4px;
+    font-size:14px;
+}
+.pwd_strength:before{
+    content:'弱';
+    left: -27px;
+    color:#ff3034;
+}
+.pwd_strength:after{
+    content:'强';
+    right: -27px;
+    color:#4bc07f;
+}
+.pwd_strength div{
+    height:10px;
+    border-radius:6px;
+}
+.pwd_strength .strength_L{
+    width:33%;
+    background:#ff3034;
+}
+.pwd_strength .strength_M{
+    width:66%;
+    background:#f5A623;
+}
+.pwd_strength .strength_S{
+    width:100%;
+    background:#4bc07f;
+}
+.re-main table tr{
+    height:10px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+.re-main table tr td{
+    width:20%;
+}
+.re-main td p{
+    height:30px;
+    line-height:30px;
+    font-size:14px;
+}
+.re-main td p span{
+    width: 18px;
+    height:18px;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    text-align: right;
+    vertical-align: text-top;
+    background: url(../images/re-radio-bg.png) no-repeat 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
+.re-main td p span.checked{
+    background-position:-28px 0;
+}
+
+.re-main  textarea{
+    width:297px;
+    height:54px;
+    resize:none;
+    border-radius:2px;
+    overflow: hidden;
+}
+.re-main button{
+    width:300px;
+    height:42px;
+    margin-top: 6px;
+    border-radius:4px;
+    color:#fff;
+    font:18px/40px 'microsoft yahei';
+    font-weight: bold;
+    letter-spacing:3px;
+    border:none;
+    outline:none;
+    background:#277fdd;
+}
+.test{
+    width:100px;
+    height:100px;
+    border:1px solid red;
+    position: fixed;
+    top:0;
+    left:0;
+    cursor:pointer;
+}  
+.test span{
+    height:50%;
+    width:100%;
+    float: left;
+    display: inline-block;
+    background-color: red;
+}
+.test span:before{
+    content: '';
+    width: 18px;
+    height: 30px;
+    float: left;
+    display: inline-block;
+    background: url(../images/re-radio-bg.png) no-repeat 0 5px;
+}
+.test span.checked{
+    background-color:yellow;
+}
+.test span.checked:before{
+    background-position:-28px 5px;
+}

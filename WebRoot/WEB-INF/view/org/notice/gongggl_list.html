@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/iframe_org.css" />
+	<title>公告管理 - 公告列表</title>
+	<style>
+		.list_wapper{height: 470px;}
+		.list_wapper_content{height: 436px;}
+	</style>
+</head>
+<body>
+	<div class="gggl_header">
+		<ul class="gggl_tabs">
+			<li class="gggl_lb select"><a href="">公告列表</a><span></span></li>
+			<li class="gggl_xx"><a href="./gongggl_list_fabu.html">发布消息</a><span></span></li>
+		</ul>
+	</div>
+	<div class="list_wapper container_panel">
+		<div class="list_wapper_header">
+			<table class="list_table_header">
+				<colgroup>
+					<col width=5%></col>
+					<col width=5%></col>
+					<col width=20%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+				</colgroup>
+				<tr>
+					<td><div class="xuhao_header">序号</div></td>
+					<td></td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							标题
+							<span class="card_order_jt" column="SHENBDH"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							发布者
+							<span class="card_order_jt" column="CHUZFS"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							发布时间
+							<span class="card_order_jt" column="PIFDH"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							失效时间
+							<span class="card_order_jt" column="PIFJE"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							状态
+							<span class="card_order_jt" column="PIFSL"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							操作
+							<span class="card_order_jt" column="XUANZSL"></span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="list_wapper_content">
+			<table>
+				<colgroup>
+					<col width=5%></col>
+					<col width=5%></col>
+					<col width=20%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=12%></col>
+					<col width=6%></col>
+					<col width=6%></col>
+				</colgroup>
+				<tr>
+					<td class="xuhao">1</td>
+					<td><div class="gonggao_status gonggao_ysx" ><span></span></div></td>
+					<td><a href="javascript: void(0)">验收公告111111111111111111</a></td>
+					<td>李四</td>
+					<td>2016-10-10</td>
+					<td>2016-10-10</td>
+					<td>已失效</td>
+					<td><a href="">查看</a></td>
+					<td><a class="gonggao_delete" href="">删除</a></td>
+				</tr>
+				<tr class="tr_color">
+					<td class="xuhao">1</td>
+					<td><div class="gonggao_status gonggao_yfb" ><span></span></div></td>
+					<td><a href="javascript: void(0)">验收公告</a></td>
+					<td>李四</td>
+					<td>2016-10-10</td>
+					<td>2016-10-10</td>
+					<td>已失效</td>
+					<td><a href="">查看</a></td>
+					<td><a class="gonggao_delete" href="">删除</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="../js/jquery-1.9.0.min.js"></script>
+</body>
+</html>

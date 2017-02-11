@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.query.mapper.CzqkMapper">
+
+	<resultMap type="java.util.Map" id="czqkMap" />
+
+	<select id="callAstQueryCzhzq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.CZHZQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{year,mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstQueryCzhzmxnumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.CZHZMXNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{year, mode=IN, jdbcType=VARCHAR},
+			#{month, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstQueryCzhzmxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.CZHZMXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{year, mode=IN, jdbcType=VARCHAR},
+			#{month, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzCzmxnumq2" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.CZMXNUMQ2 (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzCzmxq2" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.CZMXQ2 (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzCznumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.CZNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{pifzt, mode=IN, jdbcType=VARCHAR},
+			#{dengzzt, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzCzq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.CZQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{chuzdid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{pifzt, mode=IN, jdbcType=VARCHAR},
+			#{dengzzt, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzSymxnumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.SYMXNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{shouymxid, mode=IN, jdbcType=VARCHAR},
+			#{chuzzt, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+	<select id="callAstChuzSymxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CHUZ.SYMXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{shouymxid, mode=IN, jdbcType=VARCHAR},
+			#{chuzzt, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=czqkMap}
+		)
+	</select>
+
+</mapper>

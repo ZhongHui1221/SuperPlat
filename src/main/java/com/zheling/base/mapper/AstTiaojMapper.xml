@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstTiaojMapper">
+
+	<resultMap id="tiaojMap" type="java.util.Map" />
+
+	<select id="callAstTiaojZyin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_TIAOJ.ZYIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sffz, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstTiaojAcqghaud" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_TIAOJ.ACQGHAUD (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

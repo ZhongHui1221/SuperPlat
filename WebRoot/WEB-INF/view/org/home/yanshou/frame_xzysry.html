@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>选择验收人员</title>
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/iframe_org.css" />
+		<link rel="stylesheet" href="../../framework/zTree/css/zTreeStyle/zTreeStyle.css">
+		<style>
+			body{min-width:480px;}
+		</style>
+	</head>
+	<body>
+		<div class="yanshou_choose_wrap">
+			<div class="l_child yanshou_dep content_wrap">
+				<div class="zTreeDemoBackground left">
+					<ul id="danwei_tree" class="ztree"></ul>
+				</div>
+				<input type="hidden" id="py" class="checkbox first" checked />
+				<input type="hidden" id="sy" class="checkbox first" checked />
+				<input type="hidden" id="pn" class="checkbox first" checked />
+				<input type="hidden" id="sn" class="checkbox first" checked />
+			</div>
+			<div class="l_child yanshou_staff">
+				<ul>
+					<li><input type="checkbox" checked><span>长萨安</span></li>
+					<li><input type="checkbox" checked><span>长萨安</span></li>
+				</ul>
+			</div>
+			<div class="l_child yanshou_checked">
+				<ul>
+					<li>使用人,连连<i>x</i></li>
+					<li>使用人,连连<i>x</i></li>
+				</ul>
+			</div>
+		</div>
+		<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="../../framework/zTree/js/jquery.ztree.core.js"></script>
+		<script type="text/javascript" src="../../framework/zTree/js/jquery.ztree.excheck.js"></script>
+		<script>
+			var setting = {
+				check: {
+					enable: true
+				},
+				view: {
+					showIcon: false
+				},
+				data: {
+					simpleData: {
+						enable: true
+					}
+				},
+				callback: {
+					onCheck: showMember
+				}
+			};
+			//单位树数据
+			var zNodes =[
+				{ id:1, pId:0, name:"随意勾选", open:true},
+				{ id:11, pId:1, name:"随意勾选 1-1",checked:true,member:[{id:01,name:'张三'},{id:02,name:'李四'}], open:true},
+				{ id:12, pId:1, name:"随意勾选 1-2", open:true},
+				{ id:2, pId:0, name:"随意勾选 2", checked:true,member:[{id:01,name:'张三1'},{id:02,name:'李四1'}], open:true},
+				{ id:21, pId:2, name:"随意勾选 2-1"},
+				{ id:22, pId:2, name:"随意勾选 2-2", open:true},
+				{ id:23, pId:2, name:"随意勾选 2-3"}
+			];
+			
+			// 生成单位数
+			$.fn.zTree.init($("#danwei_tree"), setting, zNodes);
+			// 获取单位树对象
+			var $danwei_tree = $.fn.zTree.getZTreeObj("danwei_tree");
+			$(function(){
+				setMaxheight(0);
+			})
+			window.onresize = function(){
+				setMaxheight(0);
+			}
+
+			// 卡片列表模式页面动态给列表赋值最大高度
+			function setMaxheight(hdeff) {
+				$(".list_wapper").height($(window).height() - 140 - hdeff);
+				$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+				if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+					$(".list_wapper_header").css("padding-right", "0");
+				} else {
+					$(".list_wapper_header").css("padding-right", "17px");
+				}
+			}
+
+			function showMember(event, treeid, treeNode){
+				$(".yanshou_staff ul").empty();
+				$(".yanshou_checked ul").empty();
+				var members = $danwei_tree.getCheckedNodes(true);
+				for (var i = 0; i < members.length; i++) {
+					if (members[i].member) {
+						console.log(members[i].member);
+						for (var j = 0; j < members[i].member.length; j++) {
+							var li = $("<li>"),li2 = $("<li>");
+							li.html("<input type='checkbox' name='' value='" + members[i].member[j].id + "' checked><span>" + members[i].member[j].name + "</span>");
+							li.appendTo($(".yanshou_staff ul"));
+							li2.html(members[i].name+","+members[i].member[j].name+"<i>x</i>");
+							li2.appendTo($(".yanshou_checked ul"));
+						}
+					} else {
+						return;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstWeixMapper">
+
+	<resultMap id="weixMap" type="java.util.Map" />
+
+	<select id="callAstWeixWxin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_WEIX.WXIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sffz, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

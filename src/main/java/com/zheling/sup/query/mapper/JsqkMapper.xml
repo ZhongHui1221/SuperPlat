@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.query.mapper.JsqkMapper">
+
+	<resultMap type="java.util.Map" id="jsqkMap" />
+
+	<select id="callAstQueryZiCJSQ" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ZICJSQ (
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{sjizrq,mode=IN,jdbcType=VARCHAR},
+			#{ejizrq,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR},
+			#{sortpart,mode=IN,jdbcType=VARCHAR},
+			#{P_DS,mode=OUT,jdbcType=CURSOR,resultMap=jsqkMap}
+		)
+	</select>
+
+	<select id="callAstQueryZiCJSMXQ" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ZICJSMXQ (
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{sjizrq,mode=IN,jdbcType=VARCHAR},
+			#{ejizrq,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR},
+			#{sortpart,mode=IN,jdbcType=VARCHAR},
+			#{P_DS,mode=OUT,jdbcType=CURSOR,resultMap=jsqkMap}
+		)
+	</select>
+
+</mapper>

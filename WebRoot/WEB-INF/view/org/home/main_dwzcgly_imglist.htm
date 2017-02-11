@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>单位资产管理员 - 所有资产 - 图片列表模式</title>
+	<link rel="stylesheet" href="${request.contextPath}/static/framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="${request.contextPath}/static/css/reset.css" />
+	<link rel="stylesheet" href="${request.contextPath}/static/css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="">所有资产</a><span class="sanjx_jt active"></span></li>
+					<li><a href="">待收货</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待维修</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待转移</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待处置</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box" style="margin-bottom: 4px">
+				<div class="toolbar_left fl">
+					<ul class="yewu_action">
+						<li class="yewu_rclyw toolbar_item"><a href="javascript:void(0)">日常类业务</a><span></span><i></i></li>
+						<li class="rclyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">申请报修</a></li>
+								<li><a href="javascript:void(0)">申请处置</a></li>
+								<li><a href="javascript:void(0)">申请转移</a></li>
+								<li><a href="javascript:void(0)">申请更正</a></li>
+								<li><a href="javascript:void(0)">申请出租</a></li>
+								<li><a href="javascript:void(0)">申请出借</a></li>
+								<li><a href="javascript:void(0)">申请对外投资</a></li>
+								<li><a href="javascript:void(0)">转为主卡片</a></li>
+								<li><a href="javascript:void(0)">转为附卡片</a></li>
+								<li><a href="javascript:void(0)">修改存放地点</a></li>
+								<li><a href="javascript:void(0)">修改管理部门</a></li>
+							</ul>
+						</li>
+						<li class="toobar_line"></li>
+						<li class="yewu_bjlyw toolbar_item"><a href="javascript:void(0)">标记类业务</a><span></span><i></i></li>
+						<li class="bjlyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">标为公用资产</a></li>
+								<li><a href="javascript:void(0)">取消公用资产标记</a></li>
+								<li><a href="javascript:void(0)">标记为待报废资产</a></li>
+								<li><a href="javascript:void(0)">取消待报废资产标记</a></li>
+								<li><a href="javascript:void(0)">标记</a></li>
+								<li><a href="javascript:void(0)">取消标记</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_tmdy toolbar_item">条码打印<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdydc toolbar_item">自定义导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdylx toolbar_item">自定义列选<span></span></li>
+					</ul>
+					<div class="toolbar_tips">您尚未勾选任何数据！</div>
+					<div class="switch_model fl">
+						<div class="model_card" title="卡片模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_img" title="图片列表模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_list" title="列表模式"><a href="javascript:void(0)"></a><span></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width="20%"></col>
+						<col width="12%"></col>
+						<col width="10%"></col>
+						<col width="7%"></col>
+						<col width="10%"></col>
+						<col width="7%"></col>
+						<col width="14%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+					</colgroup>
+					<tr>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格型号
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								单价（元）
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								物品操作
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								价值
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								使用部门（人）
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产状态
+								<span class="card_order_jt" column=""></span>
+							</a>
+						</td>
+						<td>业务操作</td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width="20%"></col>
+						<col width="12%"></col>
+						<col width="10%"></col>
+						<col width="7%"></col>
+						<col width="10%"></col>
+						<col width="7%"></col>
+						<col width="14%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+					</colgroup>
+					<tr class="list_infolist">
+						<td colspan="9">
+							<ul>
+								<li>1</li>
+								<li class="list_td_label"><label class="list_label fl"><input class="chk" type="checkbox" /></label></li>
+								<li>购置日期：2016-09-02</li>
+								<li>资产编号：FW321321321321</li>
+								<li>财务入账日期：2016-09-02</li>
+								<li class="infolist_fskp"><a href="javascript:void(0)">附属卡片1张</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="list_imglist">
+						<td class="list_img_item">
+							<div class="list_img_wapper">
+								<div class="list_img_content">
+									<img src="http://www.poluoluo.com/qq/UploadFiles_7828/201611/2016110420035598.jpg" />
+								</div>
+							</div>
+							<a class="list_name_wapper" href="javascript: void(0)">笔记本电脑</a>
+							<div class="list_marks">
+								<ul>
+									<li class="card_tips_cang" title="公务仓">仓</li>
+									<li class="card_tips_ji" title="已标记">记</li>
+									<li class="card_tips_fei" title="待报废">废</li>
+									<li class="card_tips_zhang" title="财务已入账">账</li>
+									<li class="card_tips_gu" title="固定资产">固</li>
+								</ul>
+							</div>
+						</td>
+						<td>TY323223232</td>
+						<td>1200</td>
+						<td>1</td>
+						<td>
+							<div class="wpcz_wapper">
+								<div class="wpcz_sqbx"><a href="javascript:void(0)">申请报修</a></div>
+								<div class="wpcz_sqzy"><a href="javascript:void(0)">申请转移</a></div>
+								<div class="wpcz_sqcz"><a href="javascript:void(0)">申请处置</a></div>
+							</div>
+						</td>
+						<td>1234</td>
+						<td>202室</td>
+						<td>闲置</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<#include "/base/base_org_js.ftl" />
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/core/base.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerDateEditor.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerCheckBox.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerResizable.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerTree.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerComboBox.js"></script>
+	<script>
+		$(function(){
+
+			setMaxheight(0);
+
+			// 使用部门数据
+			var sybmData = [
+							{ text: '财务处', id: '1' },
+							{ text: '局领导', id: '2' },
+						]
+			// 使用人数据
+			var syrData = [
+							{text: '吴少', id: '1'},
+							{text: '吴少青', id: '2'},
+							{text: '吴少绿', id: '3'},
+							{text: '吴少红', id: '4'},
+							{text: '吴少黄', id: '5'}
+						]
+			// 资产大类数据
+			var zcdlData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+			// 使用状况数据
+			var syzkData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+			// 管理部门数据
+			var glbmData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+
+			// 生成日历
+			$("#gouzrq_begin").ligerDateEditor();
+			$("#gouzrq_end").ligerDateEditor();
+			$("#caiwrzrq_begin").ligerDateEditor();
+			$("#caiwrzrq_end").ligerDateEditor();
+			$("#kxdateBegin").ligerDateEditor();
+			$("#kxdateEnd").ligerDateEditor();
+
+			// 将日历文本框设为只读
+			$("#gouzrq_begin, #gouzrq_end, #caiwrzrq_begin, #caiwrzrq_end").attr("readonly", true);
+
+			$("#sybmCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				data: sybmData,
+				valueFieldID: 'sybmCheckbox'
+			});
+			$("#syrCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				data: syrData,
+				valueFieldID: 'syrCheckbox'
+			});
+			$("#zcdlCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				selectBoxWidth: 180,
+				data: zcdlData,
+				valueFieldID: 'zcdlCheckbox'
+			});
+			$("#zcflCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: zcdlData, checkbox: false, idFieldName: 'text' }
+			});
+			$("#syzkCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: syzkData, checkbox: true, idFieldName: 'text' }
+			});
+			$("#glbmCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: syzkData, checkbox: true, idFieldName: 'text' }
+			});
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+	</script>
+</body>
+</html>

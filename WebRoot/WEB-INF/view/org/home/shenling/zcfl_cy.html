@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>申领资产分类</title>
+	<link rel="stylesheet" href="../../framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="gggl_header">
+		<ul class="gggl_tabs fl">
+			<li class="gggl_lb select"><a href="#">常用资产分类</a><span></span></li>
+			<li class="gggl_xx"><a href="./zcfl_mx.html">明细资产分类</a><span></span></li>
+		</ul>
+		<div class="search_list fr">
+			<span class="search_list_note fl">类目搜索:</span>
+			<form class="fl" action="">
+				<div class="search_wrap">
+					<input id="shenl_search" type="search">
+					<span></span>
+				</div>
+				<div class="search_box">
+					<ul>
+						<li>金融服务业</li>
+						<li>金融服务业2</li>
+						<li>金融服务业3</li>
+						<li>金融服务业4</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="syr_slzcfl">
+		<div class="syr_cyzcfl active">
+			<ul class='syr_cyzcfl_left fl'>
+				<li class='active'><i></i>房屋及附属设备</li>
+				<li><i></i>计算机设备及软件</li>
+				<li><i></i>办公设备</li>
+				<li><i></i>数码电器</li>
+				<li><i></i>交通运输设备</li>
+				<li><i></i>图书档案</li>
+				<li><i></i>动植物</li>
+				<li><i></i>家具用具</li>
+				<li><i></i>无形资产</li>
+			</ul>
+			<div class="syr_cyzcfl_right fl">
+			</div>
+		</div>
+	</div>
+	<div class="gggl_bottom gggl_bottom_ab">
+		<div class="left">您当前选择的是: <span></span></div>
+		<input class="iframe_btn gggl_btn_qd" type="button" name="" value="确定" />
+	</div>
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script>
+		//分类数据
+		var cyData = [
+			{name:"二级分类1",children:[
+				{name:"三级分类1"},
+				{name:"三级分类2"},
+				{name:"三级分类3"},
+				{name:"三级分类2"},
+				{name:"三级分类3"},
+				{name:"三级分类2"},
+				{name:"三级分类3"},
+				{name:"三级分类4"}
+			]},
+			{name:"二级分类2",children:[
+				{name:"三级分类5"},
+				{name:"三级分类6"},
+				{name:"三级分类7"}
+			]},
+			{name:"二级分类3",children:[
+				{name:"三级分类31"},
+				{name:"三级分类32"},
+				{name:"三级分类33"}
+			]},
+			{name:"二级分类4",children:[
+				{name:"三级分类41"},
+				{name:"三级分类42"},
+				{name:"三级分类43"},
+				{name:"三级分类44"}
+			]}
+		]
+
+		function dataLoad(){
+			for (var i = 0;i< cyData.length ; i++){
+				$('.syr_cyzcfl_right').append('<ul class="syr_cyzcfl_sec"><li class="active"><div class="left fl"><i></i></div><div class="right fl"><ul></ul></div></li></ul>');
+				$('.syr_cyzcfl_right>ul').eq(i).children('li').children('.left').html(cyData[i].name+"<i></i>");
+				for(var j = 0;j < cyData[i].children.length; j++){
+					$('<li>'+cyData[i].children[j].name+'</li>').appendTo($('.syr_cyzcfl_right .syr_cyzcfl_sec').eq(i).children('li').children('.right').children('ul'));
+				}
+			}
+		}
+
+		$(function(){
+			$(dataLoad);
+			$(".syr_cyzcfl_left li").hover(function(){//一级目录
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.syr_cyzcfl_right>ul').eq($(this).index()).addClass('active').siblings().removeClass('active');
+			})
+
+			$(document).delegate('.syr_cyzcfl_sec .right li','click',function(){//末级目录
+				$('.gggl_bottom_ab .left span').html($(this).html());
+			})
+
+			$('.gggl_btn_qd').click(function(){
+				if ($('.gggl_bottom_ab .left span').html() == ''){
+					alert('请选择资产节点一直到末级节点');
+				} else {
+					window.parent.closePublicModal();
+					window.parent.alertEditModal("申领资产详情","./page/shenling/sl_zcxq.html");
+				}
+			})
+			$('.edit_modal_close').click(function(){
+				$('.edit_shenl').hide();
+			})
+
+			$('#shenl_search').focus(function(event){
+				event.stopPropagation();
+				$('.search_box').show();
+			}).keyup(function(){
+				//此处执行搜索
+			});
+
+			$("input[name ='shenl_zcfl']").focus(function(){
+				$('.edit_shenl').hide();
+			})
+
+			$('.search_wrap span').click(function(event){
+				event.stopPropagation();
+				if ($('.search_box').css('display') == 'none'){
+					$('.search_box').show();
+				} else {
+					$('.search_box').hide();
+				}
+			})
+			$('.search_box li').click(function(){
+				$('.gggl_bottom_ab .left span').html($(this).html());
+				$('.search_box').hide();
+				$('#shenl_search').val($(this).html());
+			})
+
+			$('.zl_about_close').click(function(){
+				$('.public_modal').hide();
+			})
+		})
+	</script>
+</body>
+</html>

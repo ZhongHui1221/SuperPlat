@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>单位资产管理员 - 所有资产</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/iframe_org.css">
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="">所有资产</a><span class="sanjx_jt active"></span></li>
+					<li><a href="">待收货</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待维修</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待转移</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待处置</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a href="javascript:void(0)" class="toobar_jtll_a"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a href="javascript:void(0)" class="toobar_jtl_a"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a href="javascript:void(0)" class="toobar_jtr_a"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a href="javascript:void(0)" class="toobar_jtrr_a"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box" style="margin-bottom: 4px">
+				<div class="toolbar_left fl">
+					<ul class="yewu_action">
+						<li class="yewu_rclyw toolbar_item"><a href="javascript:void(0)">日常类业务</a><span></span><i></i></li>
+						<li class="rclyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">申请报修</a></li>
+								<li><a href="javascript:void(0)">申请处置</a></li>
+								<li><a href="javascript:void(0)">申请转移</a></li>
+								<li><a href="javascript:void(0)">申请更正</a></li>
+								<li><a href="javascript:void(0)">申请出租</a></li>
+								<li><a href="javascript:void(0)">申请出借</a></li>
+								<li><a href="javascript:void(0)">申请对外投资</a></li>
+								<li><a href="javascript:void(0)">转为主卡片</a></li>
+								<li><a href="javascript:void(0)">转为附卡片</a></li>
+								<li><a href="javascript:void(0)">修改存放地点</a></li>
+								<li><a href="javascript:void(0)">修改管理部门</a></li>
+							</ul>
+						</li>
+						<li class="toobar_line"></li>
+						<li class="yewu_bjlyw toolbar_item"><a href="javascript:void(0)">标记类业务</a><span></span><i></i></li>
+						<li class="bjlyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">标为公用资产</a></li>
+								<li><a href="javascript:void(0)">取消公用资产标记</a></li>
+								<li><a href="javascript:void(0)">标记为待报废资产</a></li>
+								<li><a href="javascript:void(0)">取消待报废资产标记</a></li>
+								<li><a href="javascript:void(0)">标记</a></li>
+								<li><a href="javascript:void(0)">取消标记</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_tmdy toolbar_item">条码打印<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdydc toolbar_item">自定义导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdylx toolbar_item">自定义列选<span></span></li>
+					</ul>
+					<div class="toolbar_tips">您尚未勾选任何数据！</div>
+					<div class="switch_model fl">
+						<div class="model_card" title="卡片模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_img" title="图片列表模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_list" title="列表模式"><a href="javascript:void(0)"></a><span></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width="3%"></col>
+						<col width="3%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="9%"></col>
+						<col width="9%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="6%"></col>
+						<col width="7%"></col>
+						<col width="7%"></col>
+						<col width="7%"></col>
+						<col width="8%"></col>
+						<col width="7%"></col>
+					</colgroup>
+					<tr>
+						<td><div class="xuhao_header">序号</div></td>
+						<td></td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产编号
+								<span class="card_order_jt" column="SHENBDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt" column="CHUZFS"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格型号
+								<span class="card_order_jt" column="PIFDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								使用状态
+								<span class="card_order_jt" column="PIFJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								存放地点
+								<span class="card_order_jt" column="PIFSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								单价
+								<span class="card_order_jt" column="XUANZSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								计量单位
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								价值
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								使用人
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								使用部门
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								预留
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width="3%"></col>
+						<col width="3%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="9%"></col>
+						<col width="9%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="6%"></col>
+						<col width="7%"></col>
+						<col width="7%"></col>
+						<col width="7%"></col>
+						<col width="8%"></col>
+						<col width="7%"></col>
+					</colgroup>
+					<tr >
+						<td class="xuhao">1</td>
+						<td class="list_td_label">
+							<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+						</td>
+						<td><a href="javascript: void(0)">PFCZ2016013</a></td>
+						<td>笔记本电脑</td>
+						<td>PF20160</td>
+						<td>自用</td>
+						<td>仓库</td>
+						<td>100</td>
+						<td>1</td>
+						<td>台</td>
+						<td>100</td>
+						<td>吴少</td>
+						<td>上海市人力资源中心</td>
+						<td>123456</td>
+					</tr>
+					<tr class="tr_color">
+						<td class="xuhao">1</td>
+						<td class="list_td_label">
+							<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+						</td>
+						<td><a href="javascript: void(0)">PFCZ2016013</a></td>
+						<td>笔记本电脑</td>
+						<td>PF20160</td>
+						<td>自用</td>
+						<td>仓库</td>
+						<td>100</td>
+						<td>1</td>
+						<td>台</td>
+						<td>100</td>
+						<td>吴少</td>
+						<td>上海市人力资源中心</td>
+						<td>123456</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<script src="../js/jquery-1.9.0.min.js"></script>
+	<script src="../js/iframe_org.js"></script>
+	<script>
+		$(function(){
+			setMaxheight(0);
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+	</script>
+</body>
+</html>

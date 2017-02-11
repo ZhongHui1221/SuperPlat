@@ -1,0 +1,114 @@
+/*
+*by Winnie 
+*2016-12-28
+*/
+/*使浏览器对html5新增结构元素提供支持*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,
+small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+menu,nav,section,summary,time,mark,audio,video{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background-color: transparent;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+	display: block;
+}
+nav{
+	float: left;
+}
+article{
+	float: right;
+}
+
+/*消除浏览器默认差异样式
+*...................base style.................*/
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+/*...................公共样式................*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.pd-lr{
+	padding:0 3%;
+}
+
+/*................设置rem字号IE6-8无法支持..............*/
+html,body{font-size: 20px;}
+@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+	html,body {font-size:16.875px;}
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+ 	html,body {font-size:15px;}
+}
+@media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+ 	html,body {font-size:12.5px;}
+}
+@media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+ 	html,body {font-size:11.25px;}
+}
+@media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+	html,body {font-size:10px;}
+}
+@media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+	html,body {font-size:9.375px;}
+}
+@media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+	html,body {font-size:8.4375px;}
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+	html,body {font-size:7.5px;}
+}
+@media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+	html,body {font-size:6.46875px;}
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+	html,body {font-size:6.25px;}
+}
+@media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+	html,body {font-size:5.859375px;}
+}
+@media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+	html,body {font-size:5.625px;}
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+	html,body {font-size:5px;}
+}
+@media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+	html,body {font-size:3.75px;}
+}
+
+/*.........button......*/
+/*提交表单按钮*/
+.wl-submit{
+	margin-top:1.5rem;
+}
+.wl-submit button:disabled{
+	color:#ffa286;
+}
+.wl-btn{
+	width: 100%;
+    height: 1.253333rem;
+    line-height: 1.253333rem;
+    border: 1px solid #f40;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #f40;
+    text-align: center;
+    font-size: .426667rem;
+    display: block;
+}

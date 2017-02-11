@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>单位资产管理员 - 所有资产 - 卡片模式</title>
+	<link rel="stylesheet" href="${request.contextPath}/static/framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="${request.contextPath}/static/css/reset.css" />
+	<link rel="stylesheet" href="${request.contextPath}/static/css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="">所有资产</a><span class="sanjx_jt active"></span></li>
+					<li><a href="">待收货</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待维修</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待转移</a><span class="sanjx_jt"></span></li>
+					<li><a href="">待处置</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box" style="margin-bottom: 4px">
+				<div class="toolbar_left fl">
+					<ul class="yewu_action">
+						<li class="yewu_rclyw toolbar_item"><a href="javascript:void(0)">日常类业务</a><span></span><i></i></li>
+						<li class="rclyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">申请报修</a></li>
+								<li><a href="javascript:void(0)">申请处置</a></li>
+								<li><a href="javascript:void(0)">申请转移</a></li>
+								<li><a href="javascript:void(0)">申请更正</a></li>
+								<li><a href="javascript:void(0)">申请出租</a></li>
+								<li><a href="javascript:void(0)">申请出借</a></li>
+								<li><a href="javascript:void(0)">申请对外投资</a></li>
+								<li><a href="javascript:void(0)">转为主卡片</a></li>
+								<li><a href="javascript:void(0)">转为附卡片</a></li>
+								<li><a href="javascript:void(0)">修改存放地点</a></li>
+								<li><a href="javascript:void(0)">修改管理部门</a></li>
+							</ul>
+						</li>
+						<li class="toobar_line"></li>
+						<li class="yewu_bjlyw toolbar_item"><a href="javascript:void(0)">标记类业务</a><span></span><i></i></li>
+						<li class="bjlyw_list">
+							<ul>
+								<li><a href="javascript:void(0)">标为公用资产</a></li>
+								<li><a href="javascript:void(0)">取消公用资产标记</a></li>
+								<li><a href="javascript:void(0)">标记为待报废资产</a></li>
+								<li><a href="javascript:void(0)">取消待报废资产标记</a></li>
+								<li><a href="javascript:void(0)">标记</a></li>
+								<li><a href="javascript:void(0)">取消标记</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_tmdy toolbar_item">条码打印<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdydc toolbar_item">自定义导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_zdylx toolbar_item">自定义列选<span></span></li>
+					</ul>
+					<div class="toolbar_tips">您尚未勾选任何数据！</div>
+					<div class="switch_model fl">
+						<div class="model_card" title="卡片模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_img" title="图片列表模式"><a href="javascript:void(0)"></a><span></span></div>
+						<div class="model_list" title="列表模式"><a href="javascript:void(0)"></a><span></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper_card container">
+			<div class="list_wapper_card_header">
+				<ul>
+					<li class="sort">
+						<a href="javascript: void(0)">
+							综合排序
+							<span class="card_order_jt" column="default"></span>
+						</a>
+					</li>
+					<li class="sort">
+						<a href="javascript: void(0)">
+							购置日期
+							<span class="card_order_jt" column="GOUZRQ"></span>
+						</a>
+					</li>
+					<li class="sort">
+						<a href="javascript: void(0)">
+							财务入账日期
+							<span class="card_order_jt" column="CAIWRZRQ"></span>
+						</a>
+					</li>
+					<li class="sort">
+						<a href="javascript: void(0)">
+							数量
+							<span class="card_order_jt" column="SHUL"></span>
+						</a>
+					</li>
+					<li class="sort">
+						<a href="javascript: void(0)">
+							价格
+							<span class="card_order_jt" column="JIAZ"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="list_wapper_content list_w_cont_card">
+				<div class="item_card_wapper col-media">
+					<div class="item_card">
+						<label class="fl item_card_label"><input class="chk" type="checkbox" value="" /></label>
+						<div class="item_card_header">
+							<div class="item_card_img">
+								<img src="./img.png" />
+							</div>
+							<a class="item_card_info">
+								<ul>
+									<li>DZ20130123000039</li>
+									<li>打印机</li>
+									<li>激光打印机</li>
+								</ul>
+							</a>
+						</div>
+						<div class="item_card_price">
+							<span style="border-right: 1px solid #ccc">￥7500</span>
+							<span>数量：1</span>
+						</div>
+						<div class="item_card_middle">
+							<ul>
+								<li>购置日期：2011-05-10</li>
+								<li>财务入账：2011-05-10 00:00:00</li>
+								<li>使<font style="margin: 0 6.4px 0">用</font>人：wsq</li>
+								<li>状　　态：自用</li>
+							</ul>
+						</div>
+						<div class="item_card_bottom">
+							<ul class="card_tips">
+								<li class="card_tips_ji" title="已标记">记</li>
+								<li class="card_tips_zhang" title="财务已入账">账</li>
+								<li class="card_tips_gu" title="固定资产">固</li>
+								<li class="card_tips_zhu" title="主卡">主</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form class="filter_form" action="" method="post">
+		<div class="more_search">
+			<div class="more_search_main">
+				<table>
+					<tr>
+						<td class="more_search_item">资产名称：</td>
+						<td><input name="zicmc" type="text" value="" placeholder="可模糊查询资产名称" /></td>
+						<td class="more_search_item">规格型号：</td>
+						<td><input name="guigxh" type="text" value="" placeholder="可模糊查询规格型号" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">原资产编号：</td>
+						<td><input name="yuanzcbh_min" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">至</td>
+						<td><input name="yuanzcbh_max" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">资产编号：</td>
+						<td><input name="objcode_min" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">至</td>
+						<td><input name="objcode_max" type="text" value="" /></td>
+					</tr>
+					<tr class="search_date">
+						<td class="more_search_item">购置日期：</td>
+						<td class="search_datebox"><input id="gouzrq_begin" name="gouzrq_begin" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">
+							至
+							<div class="query_button_tips">起始日期不能大于截止日期！</div>
+						</td>
+						<td class="search_datebox"><input id="gouzrq_end" name="gouzrq_end" type="text" value="" /></td>
+					</tr>
+					<tr class="search_date">
+						<td class="more_search_item">财务入账：</td>
+						<td class="search_datebox"><input id="caiwrzrq_begin" name="caiwrzrq_begin" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">
+							至
+							<div class="query_button_tips">起始日期不能大于截止日期！</div>
+						</td>
+						<td class="search_datebox"><input id="caiwrzrq_end" name="caiwrzrq_end" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">单价：</td>
+						<td><input name="danj_min" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">至</td>
+						<td><input name="danj_max" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">使用部门：</td>
+						<td class="search_datebox"><input type="hidden" id="sybmCheckbox" name="" /></td>
+						<td class="more_search_item">使用人：</td>
+						<td class="search_datebox"><input type="hidden" id="syrCheckbox" name="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">资产大类：</td>
+						<td class="search_datebox"><input type="hidden" id="zcdlCheckbox" name="" /></td>
+						<td class="more_search_item">资产分类：</td>
+						<td class="search_datebox"><input type="hidden" id="zcflCheckbox" name="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">使用状况：</td>
+						<td class="search_datebox"><input type="hidden" id="syzkCheckbox" name="" /></td>
+						<td class="more_search_item">管理部门：</td>
+						<td class="search_datebox"><input type="hidden" id="glbmCheckbox" name="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">存放地点：</td>
+						<td><input name="" type="text" value="" /></td>
+						<td class="more_search_item">是否登账：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">未登账</option>
+								<option value="">已登账</option>
+								<option value="">全部</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="more_search_item">卡片类型：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">主卡片</option>
+								<option value="">有附属卡片的主卡片</option>
+								<option value="">无附属卡片的主卡片</option>
+								<option value="">附属卡片</option>
+								<option value="">全部</option>
+							</select>
+						</td>
+						<td class="more_search_item">是否待报废：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">未标识待报废</option>
+								<option value="">标识待报废</option>
+								<option value="">全部</option>
+							</select>
+						</td>
+					</tr>
+					<tr class="search_date">
+						<td class="more_search_item">开箱日期：</td>
+						<td class="search_datebox"><input id="kxdateBegin" name="kxdateBegin" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">
+							至
+							<div class="query_button_tips">起始日期不能大于截止日期！</div>
+						</td>
+						<td class="search_datebox"><input id="kxdateEnd" name="kxdateEnd" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">凭证号：</td>
+						<td><input type="text" name="" /></td>
+						<td class="more_search_item">是否标记：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">未标记</option>
+								<option value="">已标记</option>
+								<option value="">全部</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="more_search_item">备注：</td>
+						<td><input type="text" name="" /></td>
+						<td class="more_search_item">取得方式：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">新购</option>
+								<option value="">调拨</option>
+								<option value="">接受捐赠</option>
+								<option value="">自建</option>
+								<option value="">置换</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="more_search_item">合同编号：</td>
+						<td><input type="text" name="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">批量查找：</td>
+						<td colspan="3"><textarea class="more_search_textarea" form="" placeholder="您可以批量输入卡片编号"></textarea></td>
+					</tr>
+
+				</table>
+			</div>
+			<div class="more_search_bottom">
+				<div class="iframe_btn iframe_btn_qk">清空</div>
+				<input type="submit" class="iframe_btn iframe_btn_qd" value="确定" />
+				<div class="iframe_btn iframe_btn_qx">取消</div>
+			</div>
+		</div>
+	</form>
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<#include "/base/base_org_js.ftl" />
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/core/base.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerDateEditor.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerCheckBox.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerResizable.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerTree.js"></script>
+	<script src="${request.contextPath}/static/framework/ligerui-lib/ligerUI/js/plugins/ligerComboBox.js"></script>
+	<script>
+		$(function(){
+
+			setMaxheight(0);
+
+			// 使用部门数据
+			var sybmData = [
+							{ text: '财务处', id: '1' },
+							{ text: '局领导', id: '2' },
+						]
+			// 使用人数据
+			var syrData = [
+							{text: '吴少', id: '1'},
+							{text: '吴少青', id: '2'},
+							{text: '吴少绿', id: '3'},
+							{text: '吴少红', id: '4'},
+							{text: '吴少黄', id: '5'}
+						]
+			// 资产大类数据
+			var zcdlData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+			// 使用状况数据
+			var syzkData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+			// 管理部门数据
+			var glbmData = [
+							{text: '土地、房屋及构筑物', id: '1'},
+							{text: '通用设备', id: '2'},
+							{text: '专用设备', id: '3'},
+							{text: '文物和陈列品', id: '4'},
+							{text: '图书、档案', id: '5'},
+							{text: '家具、用具、装具及动植物', id: '6'},
+							{text: '无形资产', id: '7'}
+						]
+
+			// 生成日历
+			$("#gouzrq_begin").ligerDateEditor();
+			$("#gouzrq_end").ligerDateEditor();
+			$("#caiwrzrq_begin").ligerDateEditor();
+			$("#caiwrzrq_end").ligerDateEditor();
+			$("#kxdateBegin").ligerDateEditor();
+			$("#kxdateEnd").ligerDateEditor();
+
+			// 将日历文本框设为只读
+			$("#gouzrq_begin, #gouzrq_end, #caiwrzrq_begin, #caiwrzrq_end").attr("readonly", true);
+
+			$("#sybmCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				data: sybmData,
+				valueFieldID: 'sybmCheckbox'
+			});
+			$("#syrCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				data: syrData,
+				valueFieldID: 'syrCheckbox'
+			});
+			$("#zcdlCheckbox").ligerComboBox({ isShowCheckBox: true, isMultiSelect: true,
+				selectBoxWidth: 180,
+				data: zcdlData,
+				valueFieldID: 'zcdlCheckbox'
+			});
+			$("#zcflCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: zcdlData, checkbox: false, idFieldName: 'text' }
+			});
+			$("#syzkCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: syzkData, checkbox: true, idFieldName: 'text' }
+			});
+			$("#glbmCheckbox").ligerComboBox({
+				selectBoxWidth: 200,
+				selectBoxHeight: 200, valueField: 'text',treeLeafOnly:false,
+				tree: { data: syzkData, checkbox: true, idFieldName: 'text' }
+			});
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+
+	</script>
+</body>
+</html>

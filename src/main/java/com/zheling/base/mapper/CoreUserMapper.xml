@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.CoreUserMapper">
+
+	<select id="findUsersByDeptid" parameterType="java.lang.String" resultType="com.zheling.base.entity.CoreUser">
+		select RWID, OBJNAME from CORE_USER where MNGDEPIDS LIKE CONCAT (CONCAT ('%', #{deptid}), '%')
+	</select>
+
+	<resultMap id="userMap1" type="java.util.Map" />
+
+	<resultMap id="userMap2" type="java.util.Map" />
+
+	<select id="callCoreLogin" parameterType="java.util.Map" statementType="CALLABLE">
+		call CORE_LOGIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{zhanghm, mode=IN, jdbcType=VARCHAR},
+			#{psw, mode=IN, jdbcType=VARCHAR},
+			#{P_DS1, mode=OUT, jdbcType=CURSOR, resultMap=userMap1},
+			#{P_DS2, mode=OUT, jdbcType=CURSOR, resultMap=userMap2}
+		)
+	</select>
+
+	<select id="callCoreGetusers" parameterType="java.util.Map" statementType="CALLABLE">
+		call CORE_GETUSERS (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{includechilddept, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=userMap1}
+		)
+	</select>
+
+</mapper>

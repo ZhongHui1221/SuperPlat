@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.monitor.mapper.PdjkMapper">
+
+	<resultMap type="java.util.Map" id="pdjkMap" />
+
+	<select id="callApdcanpost" parameterType="java.util.Map" statementType="CALLABLE">
+		call APDCANPOST (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandJizrq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.JIZRQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandQcjzrorgq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.QCJZRORGQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPddtq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PDDTQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{stattype, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPddtorgq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PANDDTORGQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{stattype, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{optorgid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPdnumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PDNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPdq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PDQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPynumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PYNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstPandPyq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PAND.PYQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{qcjzr, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=pdjkMap}
+		)
+	</select>
+
+	<select id="callAstCommonInitZidyl" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.INITZIDYL (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

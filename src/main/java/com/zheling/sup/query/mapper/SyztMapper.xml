@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.query.mapper.SyztMapper">
+
+	<resultMap type="java.util.Map" id="syztMap" />
+
+	<select id="callAstQueryShiyztq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.SHIYZTQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=syztMap}
+		)
+	</select>
+
+	<select id="callAstQueryShiyztmxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.SHIYZTMXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=syztMap}
+		)
+	</select>
+
+</mapper>

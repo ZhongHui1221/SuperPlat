@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.WorkflowMapper">
+
+	<resultMap id="workFlowMap" type="java.util.Map" />
+
+	<select id="callCoreWfget" parameterType="java.util.Map" statementType="CALLABLE">
+		call CORE_WFGET (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=workFlowMap}
+		)
+	</select>
+
+	<select id="callAstCommonWfq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.WFQ(
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{bsrwid, mode=IN, jdbcType=VARCHAR},
+			#{bsmodelid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=workFlowMap}
+		)
+	</select>
+
+</mapper>

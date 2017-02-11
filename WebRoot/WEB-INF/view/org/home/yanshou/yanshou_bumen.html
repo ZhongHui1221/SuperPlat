@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>验收管理-部门资产管理员-部门领导-单位资产管理员</title>
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="javascript:void(0)">待验收</a><span class="sanjx_jt active"></span></li>
+					<li><a href="javascript:void(0)">验收中</a><span class="sanjx_jt"></span></li>
+					<li><a href="javascript:void(0)">验收完成</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<ul class="yanshou_action toolbar_left_list">
+						<!-- 待验收 -->
+						<li class="gn_add_btn"><a href="javascript:void(0)">增加</a><span></span></li>
+						<li class="toobar_line"></li>
+						<li class="gn_del_btn"><a href="javascript:void(0)">删除</a><span></span></li>
+						<li class="toobar_line"></li>
+						<li class="yanshou_tjysrs"><a href="javascript:void(0)">添加验收人</a><span></span></li>
+						<li class="toobar_line"></li>
+						<li class="yanshou_ksyss"><a href="javascript:void(0)">开始验收</a><span></span></li>
+						<!-- 验收中 -->
+						<li class="gn_submit_btn02"><a href="javascript:void(0)">验收通过</a><span></span></li>
+						<li class="toobar_line"></li>
+						<li class="gn_submit_btn02"><a href="javascript:void(0)">取消验收</a><span></span></li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<!-- <colgroup>
+						<col width="18%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup> -->
+					<!-- 待验收 -->
+					<colgroup>
+						<col width="16%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup>
+					<tr>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格型号
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								取得方式
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								计量单位
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								总价(元)
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								供应商消息
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								存放地点
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								管理部门
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								验收人
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td><a href="javascript:void(0)">业务操作</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<!-- <colgroup>
+						<col width="18%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup> -->
+					<!-- 待验收 -->
+					<colgroup>
+						<col width="16%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup>
+					<tr class="list_infolist">
+						<!-- 待验收 -->
+						<td colspan="11">
+						<!-- <td colspan="10"> -->
+							<ul>
+								<li>1</li>
+								<li class="list_td_label"><label class="list_label fl"><input class="chk" type="checkbox" /></label></li>
+								<li>购置日期：2016-09-02</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="list_imglist">
+						<td class="list_img_item">
+							<div class="list_img_wapper">
+								<div class="list_img_content">
+									<img src="http://www.poluoluo.com/qq/UploadFiles_7828/201611/2016110420035598.jpg" />
+								</div>
+							</div>
+							<a class="list_name_wapper" href="javascript: void(0)">熨烫电器</a>
+							<div class="list_marks">
+								<ul>
+									<li class="card_tips_gu" title="固定资产">固</li>
+									<li class="card_tips_ji" title="">主</li>
+									<li class="card_tips_zhang" title="财务已入账">账</li>
+								</ul>
+							</div>
+						</td>
+						<td>桂格型号</td>
+						<td>取得方式</td>
+						<td>数量</td>
+						<td>计量单位</td>
+						<td>单价(元)</td>
+						<td>供应商消息</td>
+						<td>存放地点</td>
+						<td>管理部门</td>
+						<!-- 待验收 -->
+						<td style="text-align:left">
+							<a class="icon_ysr" href="javascript:void(0)"><span></span>202室 张三</a>
+							<a class="icon_ysr" href="javascript:void(0)"><span></span>302室 李四</a>
+							<a class="icon_tjysr" href="javascript:void(0)"><span></span>添加</a>
+						</td>
+						<td>
+							<!-- 待验收 -->
+							<!-- <a class="yanshou_ksys" href="javascript:void(0)">开始验收</a><br/>
+							<a class="yanshou_delete" href="javascript:void(0)">删除</a> -->
+							<!-- 验收中 -->
+							<a class="yanshou_ystg" href="javascript:void(0)">验收通过</a><br/>
+							<a class="yanshou_qxys" href="javascript:void(0)">取消验收</a><br/>
+							<a class="yanshou_ckysyj" href="javascript:void(0)">查看验收意见</a>
+							<!-- 验收完成 -->
+							<!-- <a class="yanshou_txysyj" href="javascript:void(0)">查看验收意见</a> -->
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<form class="filter_form" action="" method="post">
+		<div class="more_search">
+			<div class="more_search_main">
+				<table>
+					<tr>
+						<td class="more_search_item">资产名称：</td>
+						<td><input name="zicmc" type="text" value="" placeholder="可模糊查询资产名称" /></td>
+						<td class="more_search_item">规格型号：</td>
+						<td><input name="guigxh" type="text" value="" placeholder="可模糊查询规格型号" /></td>
+					</tr>
+					<tr class="search_date">
+						<td class="more_search_item">购置日期：</td>
+						<td class="search_datebox"><input id="gouzrq_begin" name="gouzrq_begin" type="text" value="" /></td>
+						<td class="more_search_item" style="text-align: center">
+							至
+							<div class="query_button_tips">起始日期不能大于截止日期！</div>
+						</td>
+						<td class="search_datebox"><input id="gouzrq_end" name="gouzrq_end" type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">资产大类：</td>
+						<td class="search_datebox"><input type="text" id="zcdlCheckbox" name="" /></td>
+						<td class="more_search_item">资产分类：</td>
+						<td class="search_datebox"><input type="text" id="zcflCheckbox" name="" /></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">处置方式：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">出售</option>
+								<option value="">出让</option>
+								<option value="">转让</option>
+								<option value="">置换</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="more_search_bottom">
+				<div class="iframe_btn iframe_btn_qk">清空</div>
+				<input class="iframe_btn iframe_btn_qd" type="submit" value="确定" />
+				<div class="iframe_btn iframe_btn_qx">取消</div>
+			</div>
+		</div>
+	</form>
+	<!-- <div class="layer_yans_zclx" style="background-color:#fff;width:478px;height: 315px;border:1px solid red;z-index:999;position: fixed;left:30%;top:30%">
+		<p>选择待验收资产类型</p>
+		<ul>
+			<li>
+				<img src="../../image/yanshou_xztl.png" alt="">
+				<a><span>新增同类型资产</span></a>
+			</li>
+			<li>
+				<img src="../../image/yanshou_xzzc.png" alt="">
+				<a><span>新增资产</span></a>
+			</li>
+		</ul>
+	</div> -->
+	<!-- <div class="layer_yans_zclx" style="background-color:#fff;width:478px;height: 315px;border:1px solid red;z-index:999;position: fixed;left:30%;top:30%">
+		<p><img src="../../image/success42.png" alt="">选验收已通过</p>
+		<ul>
+			<li>
+				<img src="../../image/yanshou_dz.png">
+				<a><span>登账</span></a>
+			</li>
+			<li>
+				<img src="../../image/yanshou_fp.png">
+				<a><span>分配</span></a>
+			</li>
+		</ul>
+	</div> -->
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script src="../../framework/layer/layer/layer.js"></script>
+	<script>
+		$(function(){
+
+			setMaxheight(0);
+
+			//增加验收资产
+			$('.gn_add_btn').click(function(){
+				layer.open({
+					type:0,
+					title:'新增待验收资产选择',
+					area:['478px','379px'],
+					content:'<div class="layer_yans_zclx"><p>选择待验收资产类型</p><ul><li><img src="../../image/yanshou_xztl.png" alt=""><a class="layer_yans_xztlzc"><span>新增同类型资产</span></a></li><li><img src="../../image/yanshou_xzzc.png" alt=""><a class="layer_yans_xzzc"><span>新增资产</span></a></li></ul></div>',
+					btn:['取消']
+				})
+			})
+			//删除验收资产
+			$('.yanshou_delete').click(function(){
+				layer.confirm('请确认是否删除?', {title:'提示'}, function(index){
+				  	// 点击确认后的操作
+				  	layer.close(index);
+
+				})
+			})
+			//添加验收人
+			$('.icon_tjysr').click(function(){
+				var index = layer.open({
+					type:2,
+					title:'选择验收人员',
+					content:'./frame_xzysry.html',
+					area:['480px','505px'],
+					btn:['确定','取消'],
+					yes:function(){
+						//保存按钮回调函数
+						alert('save');
+						layer.close(index);
+					},
+					btn2:function(){
+						//取消按钮回调函数
+						alert('cancel');
+					}
+				})
+			})
+
+			//验收通过
+			$('.yanshou_ystg').click(function(){
+				layer.confirm('确认验收当前资产吗?', {title:'提示'}, function(index){
+				  	// 点击确认后的操作
+				  	layer.open({
+						type:0,
+						title:'验收去向选择',
+						content:'<h1>验收去向选择</h1>',
+						skin:'l-close-btn',
+						area:['478px','379px'],
+						content:'<div class="layer_yans_zclx"><p><img src="../../image/success42.png" alt="">选验收已通过</p><ul><li><img src="../../image/yanshou_dz.png" alt=""><a class="layer_yans_dz"><span>登账</span></a></li><li><img src="../../image/yanshou_fp.png" alt=""><a><span>分配</span></a></li></ul></div>',
+						btn:['关闭']
+				  	})
+				  	layer.close(index);
+				});
+			})
+			//取消验收
+			$('.yanshou_qxys').click(function(){
+				layer.confirm('您确认取消验收吗?', {icon: 3, title:'提示'}, function(index){
+				  	// 点击确认后的操作
+				  	alert('确定');
+				  	layer.close(index);
+				})
+			});
+
+			//查看验收意见-验收中
+			$('.yanshou_ckysyj').click(function(){
+				layer.open({
+					type:1,
+					title:'查看流程',
+					area:['453px','248px'],
+					content:'<div class="list_wapper" style="height:90%;"><div class="list_wapper_header"><table class="list_table_header"><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td><div class="xuhao_header">序号</div></td><td class="sort"><a href="javascript: void(0)">操作人<span class="card_order_jt" column="SHENBDH"></span></a></td><td class="sort"><a href="javascript: void(0)">操作时间	<span class="card_order_jt" column="CHUZFS"></span></a></td><td class="sort"><a href="javascript: void(0)">操作<span class="card_order_jt" column="PIFDH"></span></a></td><td class="sort"><a href="javascript: void(0)">意见<span class="card_order_jt" column="PIFJE"></span></a></td></tr></table></div><div class="list_wapper_content"><table><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td class="xuhao">1</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">2</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">3</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">4</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">5</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">6</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr></table></div></div>'
+				})
+			});
+			//查看验收意见-验收完成
+			$('.yanshou_txysyj').click(function(){
+				layer.open({
+					type:1,
+					title:'查看流程',
+					area:['453px','248px'],
+					content:'<div class="list_wapper" style="height:90%;"><div class="list_wapper_header"><table class="list_table_header"><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td><div class="xuhao_header">序号</div></td><td class="sort"><a href="javascript: void(0)">操作人<span class="card_order_jt" column="SHENBDH"></span></a></td><td class="sort"><a href="javascript: void(0)">操作时间	<span class="card_order_jt" column="CHUZFS"></span></a></td><td class="sort"><a href="javascript: void(0)">操作<span class="card_order_jt" column="PIFDH"></span></a></td><td class="sort"><a href="javascript: void(0)">意见<span class="card_order_jt" column="PIFJE"></span></a></td></tr></table></div><div class="list_wapper_content"><table><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td class="xuhao">1</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">2</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">3</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">4</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">5</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">6</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr></table></div></div>'
+				})
+			});
+			//新增同类型资产
+			$('.layer_yans_xztlzc').click(function(){});
+			//新增资产
+			$('.layer_yans_xzzc').click(function(){});
+			//登账
+			$('.layer_yans_dz').click(function(){});
+			// 分配
+			$('.layer_yans_fp').click(function(){});
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+
+		// 卡片列表模式页面动态给列表赋值最大高度
+		function setMaxheight(hdeff) {
+			$(".list_wapper").height($(window).height() - 140 - hdeff);
+			$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+			if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+				$(".list_wapper_header").css("padding-right", "0");
+			} else {
+				$(".list_wapper_header").css("padding-right", "17px");
+			}
+		}
+	</script>
+</body>
+</html>

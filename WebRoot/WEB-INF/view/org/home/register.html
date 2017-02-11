@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>注册</title>
+	<link href="lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/regist.css"/>
+</head>
+<body>
+<div class='header'>
+	新用户注册
+	<p>已有账户,马上<a href="reg-success.html">登录</a></p>
+</div>
+<div class="main">
+	<form action="" name="register">
+		<table class='re-main'>
+			<tr>
+				<td>真实姓名</td>
+				<td><input name ="userName" type="text"/></td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>手机号</td>
+				<td><input name="phoneNum" type="text"/></td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>登录账号</td>
+				<td><input name="userAccount" type="text"/></td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input name="pwd" type="password" onKeyUp="pwStrength(this.value)" onBlur="pwStrength(this.value)"/></td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>确认密码</td>
+				<td><input name="rePwd" type="password"/></td>
+				<td>*</td>
+			</tr>
+			<tr class="po-adjust">
+				<td>隶属部门</td><!-- 树形菜单 -->
+				<td>
+					<div class="re-inp">
+						<input id="txt1" name="department" type="text"/>
+					</div>
+				</td>
+				<td>*</td>
+			</tr>
+			<tr class="po-adjust">
+				<td>职责</td><!-- 多选 -->
+				<td>
+					<div class="re-inp">
+						<input name="response" type="text"/>
+						<span class="re-toggle"></span>
+						<div class="re-checkbox">
+							<ul>
+								<li flag = "false"><span></span><span>使用人</span></li>
+								<li flag = "false"><span></span><span>部分资产管理员1</span></li>
+								<li flag = "false"><span></span><span>部门领导1</span></li>
+								<li flag = "false"><span></span><span>部分资产管理员2</span></li>
+								<li flag = "false"><span></span><span>部门领导2</span></li>
+								<li flag = "false"><span></span><span>部分资产管理员3</span></li>
+								<li flag = "false"><span></span><span>部门领导3</span></li>
+							</ul>
+						</div>
+					</div>
+				</td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>职级</td><!-- 单选 -->
+				<td>
+					<select name="class">
+						<option value="0">上海人力资源1</option>
+						<option value="1">上海人力资源2</option>
+						<option value="2">上海人力资源3</option>
+						<option value="3">上海人力资源4</option>
+						<option value="4">上海人力资源5</option>
+						<option value="5">上海人力资源6</option>
+					</select>
+				</td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>是否在编</td>
+				<td>
+					<p>
+						<span class="checked"></span>是
+						<span class="ml30" style="margin-left:25px"></span>否
+						<input name="isSeries" type="hidden" value=""/>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<p>
+						<span class="checked"></span>男
+						<span class="ml30" style="margin-left:25px"></span>女
+						<input type="hidden" value="0" name="sex"/>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>邮箱</td>
+				<td><input type="text" name="userEmail"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button class="re-btn" type="button">立即注册</button>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+
+	</form>
+</div>
+
+<script src="lib/jquery/jquery-1.9.0.min.js"></script>
+<script src="lib/ligerUI/js/core/base.js"></script>
+<script src="lib/ligerUI/js/plugins/ligerTree.js"></script>
+<script src="lib/ligerUI/js/plugins/ligerComboBox.js"></script>
+<script>
+	data = [
+		{ "text": "节点1", "id" : 0, "children": [
+			{ "text": "节点1.1" },
+			{ "text": "节点1.2" },
+			{ "text": "节点1.3", "children": [
+				{ "text": "节点1.3.1" ,"children": [
+					{ "text": "节点1.3.1.1" },
+					{ "text": "节点1.3.1.2节点1.3.1.2节点1.3.1.2" }]
+				},
+				{ "text": "节点1.3.2" }
+			]
+			},
+			{ "text": "节点1.4" }
+		]
+		},
+		{ "text": "节点2" },
+		{ "text": "节点3" },
+		{ "text": "节点4" }
+	];
+	//提示信息
+	$(function(){
+		function regIsMatch(ele,name,reg,msg){//费否为空,是否匹配正则
+			if(ele.val() != ''){
+				if (ele.val().match(reg)){
+					ele.parents('td').next().html("*");
+					return true;
+				} else {
+					ele.parents('td').next().html('*<img src="images/Artboard 5.png"><span>'+msg+'</span>');
+					return false;
+				}
+			}else {
+				ele.parents('td').next().html('*<img src="images/Artboard 5.png"><span>'+name+'不能为空</span>');
+				return false;
+			}
+		}
+		$("input[name='userName']").blur(function(){
+			regIsMatch($(this),'姓名',/[\u4e00-\u9fa5_a-zA-Z_]/,'姓名只能由中文和英文组成');
+		});
+		$("input[name='phoneNum']").blur(function(){
+			regIsMatch($(this),'手机号',/^1\d{10}$/,'请填写正确的手机号');
+		});
+		$("input[name='userAccount']").blur(function(){
+			regIsMatch($(this),'登录账号','','');
+		});
+		$("input[name='department']").blur(function(){
+			regIsMatch($(this),'隶属部门','','');
+		});
+		$("input[name='response']").blur(function(){
+			regIsMatch($(this),'职责','','');
+		});
+		$("input[name='pwd']").focus(function(){//密码
+			$(this).parents('td').next().html('*<div class="pwd_strength" id="pwd_strength"><div class=""></div></div>');
+		}).blur(function(){
+			if ($(this).val() == ''){
+				$(this).parents('td').next().html('*<img src="images/Artboard 5.png"/><span>'+name+'不能为空</span>');
+			} else {
+				$(this).parents('td').next().html("*");
+			}
+		});
+		$("input[name='rePwd']").focus(function(){//确认密码
+			$(this).parents('td').next().html('*');
+		}).blur(function(){
+			if ($(this).val() != $("input[name='pwd']").val()){
+				$(this).parents('td').next().html('*<img src="images/Artboard 5.png"/><span>两次输入的密码不一致</span>');
+			} else {
+				$(this).parents('td').next().html("*");
+			}
+		});
+		$("input[name='userEmail']").blur(function(){//邮箱
+			if ($(this).val() != ''){
+				if ( $(this).val() .match(/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/)){
+					$(this).parents('td').next().html('');
+				} else {
+					$(this).parents('td').next().html('<img src="images/Artboard 5.png"/><span>邮箱格式不正确</span>');
+				}
+			}
+		});
+
+		$('.re-btn').click(function(){
+			regCanForm();
+		});
+
+		function regCanForm(){
+			var name = regIsMatch($("input[name='userName']"),'姓名',/[\u4e00-\u9fa5_a-zA-Z_]/,'姓名只能由中文和英文组成'),
+				phoneNum = regIsMatch($("input[name='phoneNum']"), '手机号',/^1\d{10}$/,'请填写正确的手机号'),
+				userAccount = regIsMatch($("input[name='userAccount']"),'登录账号','',''),
+				pwd = regIsMatch($("input[name='pwd']"),'密码','',''),
+				rePwd = regIsMatch($("input[name='rePwd']"),'确认密码','',''),
+				department = regIsMatch($("input[name='department']"),'隶属部门','',''),
+				response = regIsMatch($("input[name='response']"),'职责','','');
+			if ( name&&phoneNum && userAccount && pwd && department && response){
+				$('.re-btn').prop('type','submit');
+			} else {
+				$('.re-btn').prop('type','button');
+			}
+		}
+	});
+
+	$(function(){//css
+		$('#pwd_strength').parents('tr').css('position','relative').css('top','-20px')
+	});
+	//单选
+	$(function(){
+		$('.re-main p span').click(function(){
+			$(this).addClass('checked').siblings().removeClass('checked');
+			$(this).parent().children('input').attr('value',$(this).index());
+		})
+	});
+	
+	//判断输入密码的类型  
+	function CharMode(iN){  
+		if (iN>=48 && iN <=57) //数字  
+		return 1;  
+		if (iN>=65 && iN <=90) //大写  
+		return 2;  
+		if (iN>=97 && iN <=122) //小写  
+		return 4;  
+		else  
+		return 8;   
+	}  
+	//bitTotal函数  
+	//计算密码模式  
+	function bitTotal(num){  
+		modes=0;  
+		for (i=0;i<4;i++){  
+		if (num & 1) modes++;  
+		num>>>=1;  
+		}  
+		return modes;  
+	}
+	//返回强度级别  
+	function checkStrong(sPW){  
+		if (sPW.length<=4)  
+		return 0; //密码太短  
+		Modes=0;  
+		for (i=0;i<sPW.length;i++){  //密码模式  
+			Modes|=CharMode(sPW.charCodeAt(i));  
+		}  
+		return bitTotal(Modes);  
+	}  
+	  
+	//显示颜色  
+	function pwStrength(pwd){  
+		if (pwd==null||pwd==''){  
+			$('#pwd_strength div').removeAttr('class');
+		}  
+		else{  
+			S_level=checkStrong(pwd);
+			switch(S_level) {  
+				case 0:  
+					$('#pwd_strength div').removeAttr('class');
+				case 1:  
+					$('#pwd_strength div').prop('class','strength_L');
+					break;  
+				case 2: 
+					$('#pwd_strength div').prop('class','strength_M'); 
+					break;  
+				default:$('#pwd_strength div').prop('class','strength_S'); 
+			}  
+		} 
+		return;  
+	}
+
+	//	tree
+	$(function(){
+		var combo1 = $("#txt1").ligerComboBox({
+			width : 293,
+			selectBoxWidth: 293,
+			selectBoxHeight: 300, valueField: 'text', treeLeafOnly: false,
+			tree: { data:data, ajaxType: 'get',idFieldName:'text' }
+		});
+	});
+
+
+	//多选 职责
+	$(function(){
+		$('.re-toggle').click(function(){
+			$(this).next().toggle();
+			stopEvent(event);
+		});
+		$('.re-checkbox li').click(function(){
+			if ($(this).attr('flag') == 'true'){
+				$(this).removeClass('checked');
+				$(this).attr('flag','false');
+			} else {
+				$(this).addClass('checked');
+				$(this).attr('flag','true');
+			}
+			$(this).parents('.re-inp').children('input').val(re_isli_check());
+			console.log($(this).parents('.re-inp').children('input'));
+		});
+		function re_isli_check(){
+			var sum = '';
+			for ( i = 0;i < $('.re-checkbox li').length; i++){
+				if ($('.re-checkbox li').eq(i).attr('class') == 'checked'){
+					sum += $('.re-checkbox li').eq(i).children('span:last-child').html()+',';
+				}
+			}
+			sum = sum.substring(0,sum.length-1);
+			return sum;
+		}
+	});
+
+	function stopEvent(event){ //阻止冒泡事件
+		var e=arguments.callee.caller.arguments[0]||event;
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		} else if (window.event) {
+			window.event.cancelBubble = true;
+		}
+	}
+</script>
+</body>
+</html>

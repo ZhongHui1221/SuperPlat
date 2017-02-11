@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.query.mapper.BsAstCardMapper">
+
+  <resultMap id="BaseResultMap" type="com.zheling.sup.query.entity.BsAstCard">
+    <id column="RWID" jdbcType="VARCHAR" property="rwid" />
+    <result column="OBJECTID" jdbcType="VARCHAR" property="objectid" />
+    <result column="MODELID" jdbcType="VARCHAR" property="modelid" />
+    <result column="OBJCODE" jdbcType="VARCHAR" property="objcode" />
+    <result column="CREATERID" jdbcType="VARCHAR" property="createrid" />
+    <result column="CREATETIME" jdbcType="OTHER" property="createtime" />
+    <result column="ZICMC" jdbcType="VARCHAR" property="zicmc" />
+    <result column="JIAZ" jdbcType="DECIMAL" property="jiaz" />
+    <result column="SHUL" jdbcType="DECIMAL" property="shul" />
+    <result column="ZICFLID" jdbcType="VARCHAR" property="zicflid" />
+    <result column="QUDFSID" jdbcType="VARCHAR" property="qudfsid" />
+    <result column="BIANZQKID" jdbcType="VARCHAR" property="bianzqkid" />
+    <result column="YONGTFLID" jdbcType="VARCHAR" property="yongtflid" />
+    <result column="CHANQXSID" jdbcType="VARCHAR" property="chanqxsid" />
+    <result column="QUANSXZID" jdbcType="VARCHAR" property="quansxzid" />
+    <result column="JIAZLXID" jdbcType="VARCHAR" property="jiazlxid" />
+    <result column="ZIYMJ" jdbcType="DECIMAL" property="ziymj" />
+    <result column="CHUJMJ" jdbcType="DECIMAL" property="chujmj" />
+    <result column="CHUZMJ" jdbcType="DECIMAL" property="chuzmj" />
+    <result column="DUIWTZMJ" jdbcType="DECIMAL" property="duiwtzmj" />
+    <result column="QITMJ" jdbcType="DECIMAL" property="qitmj" />
+    <result column="ZIYJZ" jdbcType="DECIMAL" property="ziyjz" />
+    <result column="CHUJJZ" jdbcType="DECIMAL" property="chujjz" />
+    <result column="CHUZJZ" jdbcType="DECIMAL" property="chuzjz" />
+    <result column="DUIWTZJZ" jdbcType="DECIMAL" property="duiwtzjz" />
+    <result column="QITJZ" jdbcType="DECIMAL" property="qitjz" />
+    <result column="LICENCEDATE" jdbcType="TIMESTAMP" property="licencedate" />
+    <result column="CAIWRZRQ" jdbcType="TIMESTAMP" property="caiwrzrq" />
+    <result column="CAIGZZXSID" jdbcType="VARCHAR" property="caigzzxsid" />
+    <result column="KUAIJPZH" jdbcType="VARCHAR" property="kuaijpzh" />
+    <result column="DANJ" jdbcType="DECIMAL" property="danj" />
+    <result column="CHANGD" jdbcType="VARCHAR" property="changd" />
+    <result column="WENWDJID" jdbcType="VARCHAR" property="wenwdjid" />
+    <result column="JUNGRQ" jdbcType="TIMESTAMP" property="jungrq" />
+    <result column="CHEPH" jdbcType="VARCHAR" property="cheph" />
+    <result column="FADJH" jdbcType="VARCHAR" property="fadjh" />
+    <result column="BAOXJZRQ" jdbcType="TIMESTAMP" property="baoxjzrq" />
+    <result column="JIANZJGID" jdbcType="VARCHAR" property="jianzjgid" />
+    <result column="QUANSZH" jdbcType="VARCHAR" property="quanszh" />
+    <result column="QUANSZM" jdbcType="VARCHAR" property="quanszm" />
+    <result column="ZHUANLH" jdbcType="VARCHAR" property="zhuanlh" />
+    <result column="PIZWH" jdbcType="VARCHAR" property="pizwh" />
+    <result column="ZUOLWZ" jdbcType="VARCHAR" property="zuolwz" />
+    <result column="ZHUCDJRQ" jdbcType="TIMESTAMP" property="zhucdjrq" />
+    <result column="ZHUCDJJG" jdbcType="VARCHAR" property="zhucdjjg" />
+    <result column="TUDSYQLXID" jdbcType="VARCHAR" property="tudsyqlxid" />
+    <result column="TUDSYQR" jdbcType="VARCHAR" property="tudsyqr" />
+    <result column="FENTMJ" jdbcType="DECIMAL" property="fentmj" />
+    <result column="DUYMJ" jdbcType="DECIMAL" property="duymj" />
+    <result column="YUSXMBH" jdbcType="VARCHAR" property="yusxmbh" />
+    <result column="SHEJYT" jdbcType="VARCHAR" property="shejyt" />
+    <result column="QUNUANMJ" jdbcType="DECIMAL" property="qunuanmj" />
+    <result column="TOURSYRQ" jdbcType="TIMESTAMP" property="toursyrq" />
+    <result column="JINGXS" jdbcType="VARCHAR" property="jingxs" />
+    <result column="HETBH" jdbcType="VARCHAR" property="hetbh" />
+    <result column="FAPH" jdbcType="VARCHAR" property="faph" />
+    <result column="DANGAH" jdbcType="VARCHAR" property="dangah" />
+    <result column="CHUBS" jdbcType="VARCHAR" property="chubs" />
+    <result column="CHUBRQ" jdbcType="TIMESTAMP" property="chubrq" />
+    <result column="CHUSZZNF" jdbcType="DECIMAL" property="chuszznf" />
+    <result column="YUJSMZL" jdbcType="DECIMAL" property="yujsmzl" />
+    <result column="GANGSK" jdbcType="VARCHAR" property="gangsk" />
+    <result column="LAIYD" jdbcType="VARCHAR" property="laiyd" />
+    <result column="SHENGCCJ" jdbcType="VARCHAR" property="shengccj" />
+    <result column="SHOUQGGZ" jdbcType="TIMESTAMP" property="shouqggz" />
+    <result column="FAMR" jdbcType="VARCHAR" property="famr" />
+    <result column="ZHENGSH" jdbcType="VARCHAR" property="zhengsh" />
+    <result column="FAMMC" jdbcType="VARCHAR" property="fammc" />
+    <result column="SHIYXZ" jdbcType="VARCHAR" property="shiyxz" />
+    <result column="MIANJ" jdbcType="DECIMAL" property="mianj" />
+    <result column="DILYTID" jdbcType="VARCHAR" property="dilytid" />
+    <result column="CHELSBH" jdbcType="VARCHAR" property="chelsbh" />
+    <result column="SHOUYNX" jdbcType="VARCHAR" property="shouynx" />
+    <result column="BEIZ" jdbcType="VARCHAR" property="beiz" />
+    <result column="GUIGXH" jdbcType="VARCHAR" property="guigxh" />
+    <result column="QUANSNX" jdbcType="VARCHAR" property="quansnx" />
+    <result column="CANGPND" jdbcType="VARCHAR" property="cangpnd" />
+    <result column="BAOCNX" jdbcType="VARCHAR" property="baocnx" />
+    <result column="GUANLBMID" jdbcType="VARCHAR" property="guanlbmid" />
+    <result column="SHIYBMID" jdbcType="VARCHAR" property="shiybmid" />
+    <result column="SHIYRID" jdbcType="VARCHAR" property="shiyrid" />
+    <result column="PINP" jdbcType="VARCHAR" property="pinp" />
+    <result column="TUDJCID" jdbcType="VARCHAR" property="tudjcid" />
+    <result column="CHELCD" jdbcType="VARCHAR" property="chelcd" />
+    <result column="GOUZRQ" jdbcType="TIMESTAMP" property="gouzrq" />
+    <result column="YUANZCBH" jdbcType="VARCHAR" property="yuanzcbh" />
+    <result column="KAPLRTJID" jdbcType="VARCHAR" property="kaplrtjid" />
+    <result column="YEWYFMJ" jdbcType="DECIMAL" property="yewyfmj" />
+    <result column="XINGZBGMJ" jdbcType="DECIMAL" property="xingzbgmj" />
+    <result column="HAOPZLID" jdbcType="VARCHAR" property="haopzlid" />
+    <result column="CHELXSZZCRQ" jdbcType="TIMESTAMP" property="chelxszzcrq" />
+    <result column="SHIYZKID" jdbcType="VARCHAR" property="shiyzkid" />
+    <result column="XINGCFSID" jdbcType="VARCHAR" property="xingcfsid" />
+    <result column="JINGZ" jdbcType="DECIMAL" property="jingz" />
+    <result column="LEIJZJ" jdbcType="DECIMAL" property="leijzj" />
+    <result column="ZHEJNX" jdbcType="DECIMAL" property="zhejnx" />
+    <result column="JIZRQ" jdbcType="TIMESTAMP" property="jizrq" />
+    <result column="JINGXSDH" jdbcType="VARCHAR" property="jingxsdh" />
+    <result column="BAOYQX" jdbcType="DECIMAL" property="baoyqx" />
+    <result column="CAIZBTSR" jdbcType="DECIMAL" property="caizbtsr" />
+    <result column="KEJXMSR" jdbcType="DECIMAL" property="kejxmsr" />
+    <result column="QITSR" jdbcType="DECIMAL" property="qitsr" />
+    <result column="YUL1" jdbcType="VARCHAR" property="yul1" />
+    <result column="YUL2" jdbcType="VARCHAR" property="yul2" />
+    <result column="YUL3" jdbcType="VARCHAR" property="yul3" />
+    <result column="JILDW" jdbcType="VARCHAR" property="jildw" />
+    <result column="AUDITSTATE" jdbcType="DECIMAL" property="auditstate" />
+    <result column="AUDITTIME" jdbcType="TIMESTAMP" property="audittime" />
+    <result column="CARDSTATE" jdbcType="VARCHAR" property="cardstate" />
+    <result column="ISLATEST" jdbcType="DECIMAL" property="islatest" />
+    <result column="DENGZDID" jdbcType="VARCHAR" property="dengzdid" />
+    <result column="RWVRSN" jdbcType="DECIMAL" property="rwvrsn" />
+    <result column="FUJID" jdbcType="VARCHAR" property="fujid" />
+    <result column="MODIFYTIME" jdbcType="OTHER" property="modifytime" />
+    <result column="CUNFDDID" jdbcType="VARCHAR" property="cunfddid" />
+    <result column="YONGTID" jdbcType="VARCHAR" property="yongtid" />
+    <result column="DAIBF" jdbcType="DECIMAL" property="daibf" />
+    <result column="KAIXR" jdbcType="VARCHAR" property="kaixr" />
+    <result column="KAIXRQ" jdbcType="TIMESTAMP" property="kaixrq" />
+    <result column="ZHEJNXTMP" jdbcType="DECIMAL" property="zhejnxtmp" />
+    <result column="BIAOJ" jdbcType="DECIMAL" property="biaoj" />
+    <result column="KAPFZID" jdbcType="VARCHAR" property="kapfzid" />
+    <result column="ORGID" jdbcType="VARCHAR" property="orgid" />
+    <result column="JINGD" jdbcType="VARCHAR" property="jingd" />
+    <result column="WEID" jdbcType="VARCHAR" property="weid" />
+    <result column="PAIQL" jdbcType="DECIMAL" property="paiql" />
+    <result column="GONGLID" jdbcType="VARCHAR" property="gonglid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from BS_AST_CARD
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zheling.sup.query.entity.BsAstCard">
+    insert into BS_AST_CARD (RWID, OBJECTID, MODELID, 
+      OBJCODE, CREATERID, CREATETIME, 
+      ZICMC, JIAZ, SHUL, 
+      ZICFLID, QUDFSID, BIANZQKID, 
+      YONGTFLID, CHANQXSID, QUANSXZID, 
+      JIAZLXID, ZIYMJ, CHUJMJ, 
+      CHUZMJ, DUIWTZMJ, QITMJ, 
+      ZIYJZ, CHUJJZ, CHUZJZ, 
+      DUIWTZJZ, QITJZ, LICENCEDATE, 
+      CAIWRZRQ, CAIGZZXSID, KUAIJPZH, 
+      DANJ, CHANGD, WENWDJID, 
+      JUNGRQ, CHEPH, FADJH, 
+      BAOXJZRQ, JIANZJGID, QUANSZH, 
+      QUANSZM, ZHUANLH, PIZWH, 
+      ZUOLWZ, ZHUCDJRQ, ZHUCDJJG, 
+      TUDSYQLXID, TUDSYQR, FENTMJ, 
+      DUYMJ, YUSXMBH, SHEJYT, 
+      QUNUANMJ, TOURSYRQ, JINGXS, 
+      HETBH, FAPH, DANGAH, 
+      CHUBS, CHUBRQ, CHUSZZNF, 
+      YUJSMZL, GANGSK, LAIYD, 
+      SHENGCCJ, SHOUQGGZ, FAMR, 
+      ZHENGSH, FAMMC, SHIYXZ, 
+      MIANJ, DILYTID, CHELSBH, 
+      SHOUYNX, BEIZ, GUIGXH, 
+      QUANSNX, CANGPND, BAOCNX, 
+      GUANLBMID, SHIYBMID, SHIYRID, 
+      PINP, TUDJCID, CHELCD, 
+      GOUZRQ, YUANZCBH, KAPLRTJID, 
+      YEWYFMJ, XINGZBGMJ, HAOPZLID, 
+      CHELXSZZCRQ, SHIYZKID, XINGCFSID, 
+      JINGZ, LEIJZJ, ZHEJNX, 
+      JIZRQ, JINGXSDH, BAOYQX, 
+      CAIZBTSR, KEJXMSR, QITSR, 
+      YUL1, YUL2, YUL3, JILDW, 
+      AUDITSTATE, AUDITTIME, CARDSTATE, 
+      ISLATEST, DENGZDID, RWVRSN, 
+      FUJID, MODIFYTIME, CUNFDDID, 
+      YONGTID, DAIBF, KAIXR, 
+      KAIXRQ, ZHEJNXTMP, BIAOJ, 
+      KAPFZID, ORGID, JINGD, 
+      WEID, PAIQL, GONGLID
+      )
+    values (#{rwid,jdbcType=VARCHAR}, #{objectid,jdbcType=VARCHAR}, #{modelid,jdbcType=VARCHAR}, 
+      #{objcode,jdbcType=VARCHAR}, #{createrid,jdbcType=VARCHAR}, #{createtime,jdbcType=OTHER}, 
+      #{zicmc,jdbcType=VARCHAR}, #{jiaz,jdbcType=DECIMAL}, #{shul,jdbcType=DECIMAL}, 
+      #{zicflid,jdbcType=VARCHAR}, #{qudfsid,jdbcType=VARCHAR}, #{bianzqkid,jdbcType=VARCHAR}, 
+      #{yongtflid,jdbcType=VARCHAR}, #{chanqxsid,jdbcType=VARCHAR}, #{quansxzid,jdbcType=VARCHAR}, 
+      #{jiazlxid,jdbcType=VARCHAR}, #{ziymj,jdbcType=DECIMAL}, #{chujmj,jdbcType=DECIMAL}, 
+      #{chuzmj,jdbcType=DECIMAL}, #{duiwtzmj,jdbcType=DECIMAL}, #{qitmj,jdbcType=DECIMAL}, 
+      #{ziyjz,jdbcType=DECIMAL}, #{chujjz,jdbcType=DECIMAL}, #{chuzjz,jdbcType=DECIMAL}, 
+      #{duiwtzjz,jdbcType=DECIMAL}, #{qitjz,jdbcType=DECIMAL}, #{licencedate,jdbcType=TIMESTAMP}, 
+      #{caiwrzrq,jdbcType=TIMESTAMP}, #{caigzzxsid,jdbcType=VARCHAR}, #{kuaijpzh,jdbcType=VARCHAR}, 
+      #{danj,jdbcType=DECIMAL}, #{changd,jdbcType=VARCHAR}, #{wenwdjid,jdbcType=VARCHAR}, 
+      #{jungrq,jdbcType=TIMESTAMP}, #{cheph,jdbcType=VARCHAR}, #{fadjh,jdbcType=VARCHAR}, 
+      #{baoxjzrq,jdbcType=TIMESTAMP}, #{jianzjgid,jdbcType=VARCHAR}, #{quanszh,jdbcType=VARCHAR}, 
+      #{quanszm,jdbcType=VARCHAR}, #{zhuanlh,jdbcType=VARCHAR}, #{pizwh,jdbcType=VARCHAR}, 
+      #{zuolwz,jdbcType=VARCHAR}, #{zhucdjrq,jdbcType=TIMESTAMP}, #{zhucdjjg,jdbcType=VARCHAR}, 
+      #{tudsyqlxid,jdbcType=VARCHAR}, #{tudsyqr,jdbcType=VARCHAR}, #{fentmj,jdbcType=DECIMAL}, 
+      #{duymj,jdbcType=DECIMAL}, #{yusxmbh,jdbcType=VARCHAR}, #{shejyt,jdbcType=VARCHAR}, 
+      #{qunuanmj,jdbcType=DECIMAL}, #{toursyrq,jdbcType=TIMESTAMP}, #{jingxs,jdbcType=VARCHAR}, 
+      #{hetbh,jdbcType=VARCHAR}, #{faph,jdbcType=VARCHAR}, #{dangah,jdbcType=VARCHAR}, 
+      #{chubs,jdbcType=VARCHAR}, #{chubrq,jdbcType=TIMESTAMP}, #{chuszznf,jdbcType=DECIMAL}, 
+      #{yujsmzl,jdbcType=DECIMAL}, #{gangsk,jdbcType=VARCHAR}, #{laiyd,jdbcType=VARCHAR}, 
+      #{shengccj,jdbcType=VARCHAR}, #{shouqggz,jdbcType=TIMESTAMP}, #{famr,jdbcType=VARCHAR}, 
+      #{zhengsh,jdbcType=VARCHAR}, #{fammc,jdbcType=VARCHAR}, #{shiyxz,jdbcType=VARCHAR}, 
+      #{mianj,jdbcType=DECIMAL}, #{dilytid,jdbcType=VARCHAR}, #{chelsbh,jdbcType=VARCHAR}, 
+      #{shouynx,jdbcType=VARCHAR}, #{beiz,jdbcType=VARCHAR}, #{guigxh,jdbcType=VARCHAR}, 
+      #{quansnx,jdbcType=VARCHAR}, #{cangpnd,jdbcType=VARCHAR}, #{baocnx,jdbcType=VARCHAR}, 
+      #{guanlbmid,jdbcType=VARCHAR}, #{shiybmid,jdbcType=VARCHAR}, #{shiyrid,jdbcType=VARCHAR}, 
+      #{pinp,jdbcType=VARCHAR}, #{tudjcid,jdbcType=VARCHAR}, #{chelcd,jdbcType=VARCHAR}, 
+      #{gouzrq,jdbcType=TIMESTAMP}, #{yuanzcbh,jdbcType=VARCHAR}, #{kaplrtjid,jdbcType=VARCHAR}, 
+      #{yewyfmj,jdbcType=DECIMAL}, #{xingzbgmj,jdbcType=DECIMAL}, #{haopzlid,jdbcType=VARCHAR}, 
+      #{chelxszzcrq,jdbcType=TIMESTAMP}, #{shiyzkid,jdbcType=VARCHAR}, #{xingcfsid,jdbcType=VARCHAR}, 
+      #{jingz,jdbcType=DECIMAL}, #{leijzj,jdbcType=DECIMAL}, #{zhejnx,jdbcType=DECIMAL}, 
+      #{jizrq,jdbcType=TIMESTAMP}, #{jingxsdh,jdbcType=VARCHAR}, #{baoyqx,jdbcType=DECIMAL}, 
+      #{caizbtsr,jdbcType=DECIMAL}, #{kejxmsr,jdbcType=DECIMAL}, #{qitsr,jdbcType=DECIMAL}, 
+      #{yul1,jdbcType=VARCHAR}, #{yul2,jdbcType=VARCHAR}, #{yul3,jdbcType=VARCHAR}, #{jildw,jdbcType=VARCHAR}, 
+      #{auditstate,jdbcType=DECIMAL}, #{audittime,jdbcType=TIMESTAMP}, #{cardstate,jdbcType=VARCHAR}, 
+      #{islatest,jdbcType=DECIMAL}, #{dengzdid,jdbcType=VARCHAR}, #{rwvrsn,jdbcType=DECIMAL}, 
+      #{fujid,jdbcType=VARCHAR}, #{modifytime,jdbcType=OTHER}, #{cunfddid,jdbcType=VARCHAR}, 
+      #{yongtid,jdbcType=VARCHAR}, #{daibf,jdbcType=DECIMAL}, #{kaixr,jdbcType=VARCHAR}, 
+      #{kaixrq,jdbcType=TIMESTAMP}, #{zhejnxtmp,jdbcType=DECIMAL}, #{biaoj,jdbcType=DECIMAL}, 
+      #{kapfzid,jdbcType=VARCHAR}, #{orgid,jdbcType=VARCHAR}, #{jingd,jdbcType=VARCHAR}, 
+      #{weid,jdbcType=VARCHAR}, #{paiql,jdbcType=DECIMAL}, #{gonglid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zheling.sup.query.entity.BsAstCard">
+    update BS_AST_CARD
+    set 
+      ZICMC = #{zicmc,jdbcType=VARCHAR}
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select RWID, OBJECTID, MODELID, OBJCODE, CREATERID, CREATETIME, ZICMC, JIAZ, SHUL, 
+    ZICFLID, QUDFSID, BIANZQKID, YONGTFLID, CHANQXSID, QUANSXZID, JIAZLXID, ZIYMJ, CHUJMJ, 
+    CHUZMJ, DUIWTZMJ, QITMJ, ZIYJZ, CHUJJZ, CHUZJZ, DUIWTZJZ, QITJZ, LICENCEDATE, CAIWRZRQ, 
+    CAIGZZXSID, KUAIJPZH, DANJ, CHANGD, WENWDJID, JUNGRQ, CHEPH, FADJH, BAOXJZRQ, JIANZJGID, 
+    QUANSZH, QUANSZM, ZHUANLH, PIZWH, ZUOLWZ, ZHUCDJRQ, ZHUCDJJG, TUDSYQLXID, TUDSYQR, 
+    FENTMJ, DUYMJ, YUSXMBH, SHEJYT, QUNUANMJ, TOURSYRQ, JINGXS, HETBH, FAPH, DANGAH, 
+    CHUBS, CHUBRQ, CHUSZZNF, YUJSMZL, GANGSK, LAIYD, SHENGCCJ, SHOUQGGZ, FAMR, ZHENGSH, 
+    FAMMC, SHIYXZ, MIANJ, DILYTID, CHELSBH, SHOUYNX, BEIZ, GUIGXH, QUANSNX, CANGPND, 
+    BAOCNX, GUANLBMID, SHIYBMID, SHIYRID, PINP, TUDJCID, CHELCD, GOUZRQ, YUANZCBH, KAPLRTJID, 
+    YEWYFMJ, XINGZBGMJ, HAOPZLID, CHELXSZZCRQ, SHIYZKID, XINGCFSID, JINGZ, LEIJZJ, ZHEJNX, 
+    JIZRQ, JINGXSDH, BAOYQX, CAIZBTSR, KEJXMSR, QITSR, YUL1, YUL2, YUL3, JILDW, AUDITSTATE, 
+    AUDITTIME, CARDSTATE, ISLATEST, DENGZDID, RWVRSN, FUJID, MODIFYTIME, CUNFDDID, YONGTID, 
+    DAIBF, KAIXR, KAIXRQ, ZHEJNXTMP, BIAOJ, KAPFZID, ORGID, JINGD, WEID, PAIQL, GONGLID
+    from BS_AST_CARD
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select RWID, OBJECTID, MODELID, OBJCODE, CREATERID, CREATETIME, ZICMC, JIAZ, SHUL, 
+    ZICFLID, QUDFSID, BIANZQKID, YONGTFLID, CHANQXSID, QUANSXZID, JIAZLXID, ZIYMJ, CHUJMJ, 
+    CHUZMJ, DUIWTZMJ, QITMJ, ZIYJZ, CHUJJZ, CHUZJZ, DUIWTZJZ, QITJZ, LICENCEDATE, CAIWRZRQ, 
+    CAIGZZXSID, KUAIJPZH, DANJ, CHANGD, WENWDJID, JUNGRQ, CHEPH, FADJH, BAOXJZRQ, JIANZJGID, 
+    QUANSZH, QUANSZM, ZHUANLH, PIZWH, ZUOLWZ, ZHUCDJRQ, ZHUCDJJG, TUDSYQLXID, TUDSYQR, 
+    FENTMJ, DUYMJ, YUSXMBH, SHEJYT, QUNUANMJ, TOURSYRQ, JINGXS, HETBH, FAPH, DANGAH, 
+    CHUBS, CHUBRQ, CHUSZZNF, YUJSMZL, GANGSK, LAIYD, SHENGCCJ, SHOUQGGZ, FAMR, ZHENGSH, 
+    FAMMC, SHIYXZ, MIANJ, DILYTID, CHELSBH, SHOUYNX, BEIZ, GUIGXH, QUANSNX, CANGPND, 
+    BAOCNX, GUANLBMID, SHIYBMID, SHIYRID, PINP, TUDJCID, CHELCD, GOUZRQ, YUANZCBH, KAPLRTJID, 
+    YEWYFMJ, XINGZBGMJ, HAOPZLID, CHELXSZZCRQ, SHIYZKID, XINGCFSID, JINGZ, LEIJZJ, ZHEJNX, 
+    JIZRQ, JINGXSDH, BAOYQX, CAIZBTSR, KEJXMSR, QITSR, YUL1, YUL2, YUL3, JILDW, AUDITSTATE, 
+    AUDITTIME, CARDSTATE, ISLATEST, DENGZDID, RWVRSN, FUJID, MODIFYTIME, CUNFDDID, YONGTID, 
+    DAIBF, KAIXR, KAIXRQ, ZHEJNXTMP, BIAOJ, KAPFZID, ORGID, JINGD, WEID, PAIQL, GONGLID
+    from BS_AST_CARD
+  </select>
+  <select id="getTotalCount" resultType="int">
+    select count(*) from BS_AST_CARD
+  </select>
+  <select id="getResults" parameterType="java.util.Map" resultMap="BaseResultMap">
+		select * from (
+			select t.*, ROWNUM rn from (
+				select * from BS_AST_CARD) t
+		<![CDATA[
+			where ROWNUM < #{endIndex})
+		]]>
+	<![CDATA[
+		where rn >= #{fromIndex}
+	]]>
+  </select>
+
+	<resultMap id="cardMap" type="java.util.Map" />
+
+	<select id="callAstQueryZcdl" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ZICDLQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{jizrq, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstQueryZdqk" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ZHONGDQKQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstQuerySyzt" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.SHIYZTQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAcmxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call ACMXQ (
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{type,mode=IN,jdbcType=INTEGER},
+			#{idorcode,mode=IN,jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap},
+			#{isphone,mode=IN,jdbcType=INTEGER}
+		)
+	</select>
+
+	<select id="callAstCardUpd" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CARD.UPD (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{modifytime, mode=IN, jdbcType=VARCHAR},
+			#{pairs, mode=IN, jdbcType=VARCHAR},
+			#{modelid, mode=IN, jdbcType=VARCHAR},
+			#{bsrwid, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callBsdtq" parameterType="java.util.Map" statementType="CALLABLE">
+		call BSDTQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{datatype,mode=IN,jdbcType=VARCHAR},
+			#{datatime,mode=IN,jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAcnumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call ACNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstQueryAcwxnumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ACWXNUMQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{time, mode=IN, jdbcType=VARCHAR},
+			#{moth, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAcq" parameterType="java.util.Map" statementType="CALLABLE">
+		call ACQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstQueryAcwxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ACWXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{time, mode=IN, jdbcType=VARCHAR},
+			#{moth, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callQueryFussb" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.FUSSB (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callCbsmdefq" parameterType="java.util.Map" statementType="CALLABLE">
+		call CBSMDEFQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{modelid, mode=IN, jdbcType=VARCHAR},
+			#{Minrvsvn, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callQueryZhejmx" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.ZHEJ_MX (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{cardobjid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callWeixAwxq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_WEIX.AWXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{weixzt, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callCardAclogq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CARD.ACLOGQ (
+			#{cardobjid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAcqDaoc" parameterType="java.util.Map" statementType="CALLABLE">
+		call ACQ_DAOC (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstCommonZidydcq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.ZIDYDCQ (
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstCardLoucq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CARD.LOUCQ (
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardobjid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstCardFangjq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CARD.FANGJQ (
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardobjid, mode=IN, jdbcType=VARCHAR},
+			#{loucid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=cardMap}
+		)
+	</select>
+
+	<select id="callAstCardBiaosgy" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_CARD.BIAOSGY (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sffz, mode=IN, jdbcType=VARCHAR},
+			#{isgy, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>验收管理-使用人</title>
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="javascript:void(0)">待验收</a><span class="sanjx_jt active"></span></li>
+					<li><a href="javascript:void(0)">验收完成</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<ul class="yanshou_action toolbar_left_list">
+						<li class="gn_submit_btn"><a href="#">提交</a><span></span></li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width="18%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup>
+					<tr>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格型号
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								取得方式
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								计量单位
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								总价(元)
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								供应商消息
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								存放地点
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								管理部门
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td><a href="javascript:void(0)">业务操作</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width="18%"></col>
+						<col width="8%"></col>
+						<col width="8%"></col>
+						<col width="6%"></col>
+						<col width="8%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="10%"></col>
+						<col width="12%"></col>
+					</colgroup>
+					<tr class="list_infolist">
+						<td colspan="10">
+							<ul>
+								<li>1</li>
+								<li class="list_td_label"><label class="list_label fl"><input class="chk" type="checkbox" /></label></li>
+								<li>购置日期：2016-09-02</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="list_imglist">
+						<td class="list_img_item">
+							<div class="list_img_wapper">
+								<div class="list_img_content">
+									<img src="http://www.poluoluo.com/qq/UploadFiles_7828/201611/2016110420035598.jpg" />
+								</div>
+							</div>
+							<a class="list_name_wapper" href="javascript: void(0)">熨烫电器</a>
+							<div class="list_marks">
+								<ul>
+									<li class="card_tips_gu" title="固定资产">固</li>
+									<li class="card_tips_ji" title="">主</li>
+									<li class="card_tips_zhang" title="财务已入账">账</li>
+								</ul>
+							</div>
+						</td>
+						<td>桂格型号</td>
+						<td>取得方式</td>
+						<td>数量</td>
+						<td>计量单位</td>
+						<td>单价(元)</td>
+						<td>供应商消息</td>
+						<td>存放地点</td>
+						<td>管理部门</td>
+						<td>
+							<!-- 待验收 -->
+							<a class="yanshou_tj" href="javascript:void(0)">提交</a><br/>
+							<a class="yanshou_txysyj" href="javascript:void(0)">填写验收意见</a>
+							<!-- 验收完成 -->
+							<!-- <a class="yanshou_tj" href="javascript:void(0)" style="color:#ff3034;">还剩6天23时36分</a><br/>
+							<a class="yanshou_ckysyj" href="javascript:void(0)">查看验收意见</a> -->
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<form class="filter_form" action="" method="post">
+		<div class="more_search">
+			<div class="more_search_main">
+				<table>
+					<tr>
+						<td class="more_search_item">资产名称：</td>
+						<td><input name="zicmc" type="text" placeholder="可模糊查询资产名称" /></td>
+						<td class="more_search_item">规格型号：</td>
+						<td><input name="guigxh" type="text"/></td>
+					</tr>
+					<tr class="search_date">
+						<td class="more_search_item">购置日期：</td>
+						<td class="search_datebox"><input id="gouzrq_begin" name="gouzrq_begin" type="text"/></td>
+						<td class="more_search_item" style="text-align: center">
+							至
+							<div class="query_button_tips">起始日期不能大于截止日期！</div>
+						</td>
+						<td class="search_datebox"><input id="gouzrq_end" name="gouzrq_end" type="text"/></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值：</td>
+						<td><input name="objcode_min" type="text" style="text-align: right"/></td>
+						<td class="more_search_item" style="text-align: center">至</td>
+						<td><input name="objcode_max" type="text" style="text-align: right"/></td>
+					</tr>
+					<tr>
+						<td class="more_search_item">存放地点：</td>
+						<td>
+							<select>
+								<option value=""></option>
+							</select>
+						</td>
+						<td class="more_search_item">管理部门：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">办公使用</option>
+								<option value="">教学使用</option>
+								<option value="">培训使用</option>
+								<option value="">执法执勤</option>
+								<option value="">窗口使用</option>
+								<option value="">专业用途</option>
+								<option value="">其他业务使用</option>
+								<option value="">用于公共服务对象</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="more_search_item">合同编号：</td>
+						<td><input type="text"/></td>
+						<td class="more_search_item">取得方式：</td>
+						<td>
+							<select>
+								<option value=""></option>
+								<option value="">办公使用</option>
+								<option value="">教学使用</option>
+								<option value="">培训使用</option>
+								<option value="">执法执勤</option>
+								<option value="">窗口使用</option>
+								<option value="">专业用途</option>
+								<option value="">其他业务使用</option>
+								<option value="">用于公共服务对象</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="more_search_bottom">
+				<div class="iframe_btn iframe_btn_qk">清空</div>
+				<input type="submit" class="iframe_btn iframe_btn_qd" value="确定" />
+				<div class="iframe_btn iframe_btn_qx">取消</div>
+			</div>
+		</div>
+	</form>
+	<!-- <div class="list_wapper" style="height:90%;">
+		<div class="list_wapper_header">
+			<table class="list_table_header">
+				<colgroup>
+					<col width=10%></col>
+					<col width=20%></col>
+					<col width=25%></col>
+					<col width=20%></col>
+					<col width=25%></col>
+				</colgroup>
+				<tr>
+					<td><div class="xuhao_header">序号</div></td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							操作人
+							<span class="card_order_jt" column="SHENBDH"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							操作时间
+							<span class="card_order_jt" column="CHUZFS"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							操作
+							<span class="card_order_jt" column="PIFDH"></span>
+						</a>
+					</td>
+					<td class="sort">
+						<a href="javascript: void(0)">
+							意见
+							<span class="card_order_jt" column="PIFJE"></span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="list_wapper_content">
+			<table>
+				<colgroup>
+					<col width=10%></col>
+					<col width=20%></col>
+					<col width=25%></col>
+					<col width=20%></col>
+					<col width=25%></col>
+				</colgroup>
+				<tr>
+					<td class="xuhao">1</td>
+					<td>操作人</td>
+					<td>操作时间</td>
+					<td>操作</td>
+					<td>意见</td>
+				</tr>
+			</table>
+		</div>
+	</div> -->
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script src="../../framework/layer/layer/layer.js"></script>
+	<script>
+		$(function(){
+			setMaxheight(0);
+			//快速选择验收意见
+			$(document).delegate('#ys_ysyj','change',function(){
+				$(this).val();
+				$('.txysyj-class textarea').val($(this).children('option:selected').html());
+			})
+			$('.yanshou_txysyj').click(function(){//填写验收意见
+				layer.open({
+					type:0,
+					title:'填写验收意见',
+					content:'<div class="txysyj-class" style=""><div><label for="ys_ysyj">快速选择验收意见:</label><select id="ys_ysyj"><option></option><option value="0">同意</option><option value="1">不同意</option></select></div><textarea cols="44" rows="3"></textarea></div>',
+					skin: 'three-btn-class',
+					btn:['保存','取消','清空'],
+					yes:function(){
+						//保存按钮回调函数
+						alert('save');
+					},
+					btn2:function(){
+						//取消按钮回调函数
+						alert('cancel');
+					},
+					btn3:function(){
+						//清空按钮回调函数
+						$('.txysyj-class textarea').val('');
+						alert('clear');
+						return false;
+					}
+				})
+			});
+			$('.yanshou_ckysyj').click(function(){//查看验收意见
+				layer.open({
+					type:1,
+					title:'验收意见',
+					area:['453px','248px'],
+					content:'<div class="list_wapper" style="height:90%;"><div class="list_wapper_header"><table class="list_table_header"><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td><div class="xuhao_header">序号</div></td><td class="sort"><a href="javascript: void(0)">操作人<span class="card_order_jt" column="SHENBDH"></span></a></td><td class="sort"><a href="javascript: void(0)">操作时间	<span class="card_order_jt" column="CHUZFS"></span></a></td><td class="sort"><a href="javascript: void(0)">操作<span class="card_order_jt" column="PIFDH"></span></a></td><td class="sort"><a href="javascript: void(0)">意见<span class="card_order_jt" column="PIFJE"></span></a></td></tr></table></div><div class="list_wapper_content"><table><colgroup><col width=10%></col><col width=20%></col><col width=25%></col><col width=20%></col><col width=25%></col></colgroup><tr><td class="xuhao">1</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">2</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">3</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">4</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">5</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr><tr><td class="xuhao">6</td><td>操作人</td><td>操作时间</td><td>操作</td><td>意见</td></tr></table></div></div>'
+				})
+			})
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+
+		// 卡片列表模式页面动态给列表赋值最大高度
+		function setMaxheight(hdeff) {
+			$(".list_wapper").height($(window).height() - 140 - hdeff);
+			$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+			if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+				$(".list_wapper_header").css("padding-right", "0");
+			} else {
+				$(".list_wapper_header").css("padding-right", "17px");
+			}
+		}
+	</script>
+</body>
+</html>

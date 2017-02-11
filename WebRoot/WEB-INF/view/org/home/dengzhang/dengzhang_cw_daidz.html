@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>待登账-财务</title>
+	<link rel="stylesheet" href="../../framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="javascript:void(0)">待登账</a><span class="sanjx_jt active"></span></li>
+					<li><a href="./dengzhang_cw_yidz.html">已登账</a><span class="sanjx_jt"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<table class="table_dataedit_select">
+						<tr>
+							<td>财务入账日期:</td>
+							<td><input id="caiwrzrq_start" type="text"></td>
+							<td class="more_search_item">
+								至
+								<div class="query_button_tips">起始日期不能大于截止日期！</div>
+							</td>
+							<td class="search_datebox"><input id="caiwrzrq_end" type="text"/></td>
+							<td class="more_search_item">科目：</td>
+							<td>
+								<select>
+									<option value="">请选择</option>
+									<option value="">固定资产</option>
+									<option value="">无形资产</option>
+									<option value="">流动资产</option>
+								</select>
+							</td>
+							<td class="more_search_item">子科目：</td>
+							<td>
+								<select>
+									<option value="">请选择</option>
+									<option value="">土地、房屋及构筑物</option>
+									<option value="">通用设备</option>
+									<option value="">专用设备</option>
+									<option value="">文物和陈列品</option>
+									<option value="">图书、档案</option>
+									<option value="">家具、用具、装具及动植物</option>
+									<option value="">无形资产</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<ul class="dengzh_action toolbar_left_list">
+						<li class="dz_txdzxx"><a href="#">填写登账信息</a><span></span></li>
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width=3%></col>
+						<col width=3%></col>
+						<col width=6%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=10%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+					</colgroup>
+					<tr>
+						<td><div class="xuhao_header">序号</div></td>
+						<td></td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								摘要
+								<span class="card_order_jt" column="SHENBDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								科目
+								<span class="card_order_jt" column="CHUZFS"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								子科目
+								<span class="card_order_jt" column="PIFDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								取得方式
+								<span class="card_order_jt" column="PIFJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								供应商
+								<span class="card_order_jt" column="PIFSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								发票号
+								<span class="card_order_jt" column="XUANZSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								购置日期
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								采购方式
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								计量单位
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								总价
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								业务操作
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width=3%></col>
+						<col width=3%></col>
+						<col width=6%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=10%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+					</colgroup>
+					<tr >
+						<td class="xuhao">1</td>
+						<td class="list_td_label">
+							<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+						</td>
+						<td>摘要</td>
+						<td>科目</td>
+						<td>子科目</td>
+						<td>取得方式</td>
+						<td>供应商</td>
+						<td>发票号</td>
+						<td>购置日期</td>
+						<td>采购方式</td>
+						<td>计量单位</td>
+						<td>数量</td>
+						<td>总价</td>
+						<td><a class="dz_txdzxx" href="javascript:void(0)">填写登账信息</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script src="../../framework/layer/layer/layer.js"></script>
+	<script>
+		$(function(){
+			setMaxheight(0);
+
+			$('.dz_txdzxx').click(function(){
+				window.parent.layer.open({
+					type:2,
+					title:'填写登账信息',
+					content:'./page/dengzhang/dengzhang_txdzxx.html',
+					area:['853px','492px'],
+					btn:['登账','取消'],
+					yes:function(){
+						//保存按钮回调函数
+						alert('save');
+						layer.close(index);
+					},
+					btn2:function(){
+						//取消按钮回调函数
+						alert('cancel');
+					}
+				})
+			})
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+		// 卡片列表模式页面动态给列表赋值最大高度
+		function setMaxheight(hdeff) {
+			$(".list_wapper").height($(window).height() - 140 - hdeff);
+			$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+			if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+				$(".list_wapper_header").css("padding-right", "0");
+			} else {
+				$(".list_wapper_header").css("padding-right", "17px");
+			}
+		}
+	</script>
+</body>
+</html>

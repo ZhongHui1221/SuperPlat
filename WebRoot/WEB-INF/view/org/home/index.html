@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>资产管理系统</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link rel="stylesheet" href="./framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+		<link rel="stylesheet" href="./css/main_org.css" />
+		<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css" />
+		<link rel="stylesheet" id="mylink" />
+		<link rel="shortcut icon" href="./image/favicon.ico" />
+	</head>
+	<body style="padding:0px;background:#EAEEF5">
+        <div class="container">
+            <div id="pageloading"></div>
+            <div id="topmenu" class="l-topmenu">
+                <div class="l-topmenu-logo">资产管理系统</div>
+                <div class="l-topmenu-welcome">
+                    <ul>
+                        <li class="header_zcfg" style="margin-left: 20px"><a href="javascript: f_addTab('zcfg_main', '政策法规', './Policy/policy.html')"></a><b>政策法规</b></li>
+                        <li class="header_xzzx" ><a href="javascript: f_addTab('listpage', '列表页面', 'demos/case/listpage.htm')"></a><b>下载中心</b></li>
+                        <li class="header_lxkf" ><a href="javascript: void(0)"></a><b>联系客服</b></li>
+                        <li class="system_mag">
+                            <a href="javascript: void(0)"></a>
+                            <ul class="system_mag_item">
+                                <li class="system_mag_item_first"><a href="./CoreUser/logout">重新登录</a></li>
+                                <li class="about"><a href="javascript: void(0)">关于</a></li>
+                            </ul>
+                            <b>系统管理</b>
+                        </li>
+                        <li class="header_qpxs" allscreen="not">
+                            <a href="javascript: void(0)"></a>
+                            <b>全屏显示</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="layout1" style="width:99.8%; margin:0px; ">
+                    <div position="left" id="accordion1">
+                         <div title="功能列表" class="l-scroll">
+                            <div class="user_wapper">
+                                <div class="default_user">张红梅</div>
+                                <div class="user_work_wapper">
+                                    <div class="user_work">
+                                        <span>单位资产管理员</span>
+                                        <ul class="user_work_switch">
+                                            <li><a href="">主管部门</a></li>
+                                            <li><a href="">财务制单人员</a></li>
+                                            <li><a href="">单位领导</a></li>
+                                            <li><a href="">部门资产管理员-办公室</a></li>
+                                            <li><a href="">使用人-办公室</a></li>
+                                        </ul>
+                                    </div>
+                                    <i class="icon_sjx"></i>
+                                </div>
+                            </div>
+                            <div class="message_info">
+                                <div class="message_todo"><span></span></div>
+                                <div class="message_notice"><span></span></div>
+                                <div class="message_list">
+                                    <div class="message_list_header">
+                                        待办事项<span>（4）</span>
+                                        <div class="message_action">
+                                            <i class="msg_action_refresh"></i>
+                                            <i class="msg_action_close"></i>
+                                        </div>
+                                    </div>
+                                    <div class="message_content">
+                                        <ul>
+                                            <li><span>1、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li><span>1、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li><span>1、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li><span>1、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li><span>1、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li><span>9、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                            <li style="border-bottom: none"><span>10、</span><div class="message_item"><a href="javascript:void(0)">您有1条资产维修待审核</a></div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="jt_sjx"></div>
+                                </div>
+                            </div>
+                            <div class="gn_model">
+                                <!-- 单位资产管理员 -->
+                                <ul style="display: block">
+                                    <li class="gn_item select" gn_id="home">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_main select"><a href="javascript:void(0)">首页</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="pzgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_pzgl"><a href="javascript:void(0)">配置管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="kpgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_kpgl"><a href="javascript:void(0)">卡片管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zczy">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zczy"><a href="javascript:void(0)">资产转移</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zcpd">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zcpd"><a href="javascript:void(0)">资产盘点</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wxgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wxgl"><a href="javascript:void(0)">维修管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zccz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zccz"><a href="javascript:void(0)">资产处置</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zczl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zczl"><a href="javascript:void(0)">资产租赁</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="dwtz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_dwtz"><a href="javascript:void(0)">对外投资</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="sygl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_sygl"><a href="javascript:void(0)">收益管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="jcfx">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_jcfx"><a href="javascript:void(0)">决策分析</a><span></span></div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <!-- 使用人 -->
+                                <ul>
+                                    <li class="gn_item select" gn_id="home">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_main select"><a href="javascript:void(0)">首页</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wysl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wysl"><a href="javascript:void(0)">我要申领</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wypd">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wypd"><a href="javascript:void(0)">我要盘点</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wybx">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wybx"><a href="javascript:void(0)">我要报修</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zygh">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zygh"><a href="javascript:void(0)">转移归还</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wycz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wycz"><a href="javascript:void(0)">我要处置</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="yszc">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_yszc"><a href="javascript:void(0)">验收资产</a><span></span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- 部门资产管理员 && 部门领导 -->
+                                <ul>
+                                    <li class="gn_item select" gn_id="home">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_main select"><a href="javascript:void(0)">首页</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="pzgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_pzgl"><a href="javascript:void(0)">配置管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="yszc">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_yszc"><a href="javascript:void(0)">验收资产</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zczy">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zczy"><a href="javascript:void(0)">资产转移</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zcpd">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zcpd"><a href="javascript:void(0)">资产盘点</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wxgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wxgl"><a href="javascript:void(0)">维修管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zccz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zccz"><a href="javascript:void(0)">资产处置</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="jcfx">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_jcfx"><a href="javascript:void(0)">决策分析</a><span></span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- 单位领导 -->
+                                <ul>
+                                    <li class="gn_item select" gn_id="home">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_main select"><a href="javascript:void(0)">首页</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="pzgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_pzgl"><a href="javascript:void(0)">配置管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="kpgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_kpgl"><a href="javascript:void(0)">卡片管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zczy">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zczy"><a href="javascript:void(0)">资产转移</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zcpd">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zcpd"><a href="javascript:void(0)">资产盘点</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="wxgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_wxgl"><a href="javascript:void(0)">维修管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zccz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zccz"><a href="javascript:void(0)">资产处置</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="jcfx">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_jcfx"><a href="javascript:void(0)">决策分析</a><span></span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- 财务制单人员 -->
+                                <ul>
+                                    <li class="gn_item select" gn_id="home">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_main select"><a href="javascript:void(0)">首页</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="xzzc">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_xzzc"><a href="javascript:void(0)">新增资产</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="hxzc">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_hxzc"><a href="javascript:void(0)">核销资产</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zcxl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zcxl"><a href="javascript:void(0)">资产修理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="sygl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_sygl"><a href="javascript:void(0)">收益管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="xxgz">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_xxgz"><a href="javascript:void(0)">信息更正</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="zjgl">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_zjgl"><a href="javascript:void(0)">折旧管理</a><span></span></div>
+                                        </div>
+                                    </li>
+                                    <li class="gn_item" gn_id="cxfx">
+                                        <div class="gn_item_wapper">
+                                            <div class="gn_item_inner gn_cxfx"><a href="javascript:void(0)">查询分析</a><span></span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div position="center" id="framecenter">
+                        <div tabid="home" title="首页" style="height:300px" >
+                            <iframe frameborder="0" name="home" id="home"></iframe>
+                        </div>
+                    </div>
+            </div>
+                <div style="display:none"></div>
+    		</div>
+            <div class="card_module">
+                <div class="zl_about_header">
+                    <div class="about_header_info">卡片详细信息查看</div>
+                    <div class="zl_about_icon"></div>
+                    <div class="zl_about_close"></div>
+                </div>
+                <div class="card_module_content">
+                    <iframe frameborder="0" width="100%" height="100%" name="card_module" id="card_module"></iframe>
+                </div>
+            </div>
+            <div class="zl_about">
+                <div class="zl_about_header">
+                    <div class="about_header_info">关于我们</div>
+                    <div class="zl_about_icon"></div>
+                    <div class="zl_about_close"></div>
+                </div>
+                <div class="zl_about_content">
+                    <div class="zl_about_cont_h">上海哲凌科技有限公司</div>
+                    <div class="zl_about_cont_contact">
+                        <ul>
+                            <li>客服：021-61138827</li>
+                            <li>传真：021-61135481-808</li>
+                            <li>地址：上海市徐汇区钦州路100号</li>
+                            <li class="zl_about_bbh">版本号：1.0.11.1</li>
+                            <li class="zl_about_copy">Copyright &copy; 上海哲凌科技有限公司</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="zl_about_bottom">
+                    <span class="zl_bottom_close">确定</span>
+                </div>
+                <div class="zl_about_bg"></div>
+            </div>
+    		<div class="page_cover"></div>
+    		<div class="page_cover_tips"></div>
+
+		<script src="./framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+        <script src="./framework/ligerui-lib/ligerUI/js/ligerui.all.js"></script>
+        <script src="./js/jquery-ui-1.10.4.min.js"></script>
+        <script src="./js/jquery.mousewheel.js"></script>
+        <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script>
+            /* 首页框架配置js */
+            var tab = null;
+            var accordion = null;
+            var tree = null;
+            var tabItems = [];
+
+            $(function() {
+
+                // 布局
+                $("#layout1").ligerLayout({
+                    leftWidth: 170,
+                    height: '100%',
+                    heightDiff: -1,
+                    space: 0,
+                    allowLeftResize: false,
+                    onHeightChanged: f_heightChanged,
+                    onLeftToggle: function() {
+                        tab && tab.trigger('sysWidthChange');
+                    },
+                    onRightToggle: function() {
+                        tab && tab.trigger('sysWidthChange');
+                    }
+                });
+                var height = $(".l-layout-center").height();
+
+                // 页签
+                tab = $("#framecenter").ligerTab({
+                    height: height,
+                    showSwitchInTab: true,
+                    showSwitch: true,
+                    contextmenu: false,
+                    onAfterAddTabItem: function(tabdata) {
+                        tabItems.push(tabdata);
+                        //saveTabStatus();
+                        // 将新增页签的 tree_id 属性变更为所选树节点的 id
+                        var tree_id = $("#tree1").find(".l-selected").parent().attr("id");
+                        $(".l-tab-links").find(".l-selected").attr("tree_id", tree_id);
+                    },
+                    onAfterRemoveTabItem: function(tabid) {
+                        for (var i = 0; i < tabItems.length; i++) {
+                            var o = tabItems[i];
+                            if (o.tabid == tabid) {
+                                tabItems.splice(i, 1);
+                                //saveTabStatus();
+                                break;
+                            }
+                        }
+                    },
+                    onReload: function(tabdata) {
+                        var tabid = tabdata.tabid;
+                        addFrameSkinLink(tabid);
+                    }
+                });
+
+                // 面板
+                $("#accordion1").ligerAccordion({
+                    height: height - 1, speed: null
+                });
+
+                $(".l-link").hover(function() {
+                    $(this).addClass("l-link-over");
+                }, function() {
+                    $(this).removeClass("l-link-over");
+                });
+
+                tab = liger.get("framecenter");
+                accordion = liger.get("accordion1");
+                tree = liger.get("tree1");
+                $("#pageloading").hide();
+
+                css_init();
+                //pages_init();
+
+            });
+
+            function f_heightChanged(options){
+                if (tab)
+                    tab.addHeight(options.diff);
+                if (accordion && options.middleHeight - 24 > 0)
+                    accordion.setHeight(options.middleHeight - 24);
+            }
+
+            function f_addTab(tabid, text, url){
+                tab.addTabItem({
+                    tabid: tabid,
+                    text: text,
+                    url: url,
+                    callback: function ()
+                    {
+                        addFrameSkinLink(tabid);
+                    }
+                });
+            }
+
+            function addFrameSkinLink(tabid){
+                var prevHref = getLinkPrevHref(tabid) || "";
+                var skin = getQueryString("skin");
+                if (!skin) return;
+                skin = skin.toLowerCase();
+                attachLinkToFrame(tabid, prevHref + skin_links[skin]);
+            }
+
+            var skin_links = {
+                "aqua": "lib/ligerUI/skins/Aqua/css/ligerui-all.css",
+                "gray": "lib/ligerUI/skins/Gray/css/all.css",
+                "silvery": "lib/ligerUI/skins/Silvery/css/style.css",
+                "gray2014": "lib/ligerUI/skins/gray2014/css/all.css"
+            };
+
+            /*
+            function pages_init() {
+                var tabJson = $.cookie("liger-home-tab");
+                if (tabJson) {
+                    var tabitems = JSON2.parse(tabJson);
+                    for (var i = 0; tabitems && tabitems[i]; i++) {
+                        f_addTab(tabitems[i].tabid, tabitems[i].text, tabitems[i].url);
+                    }
+                }
+            }
+            */
+
+            /*
+            function saveTabStatus() {
+                $.cookie("liger-home-tab", JSON2.stringify(tabItems));
+            }
+            */
+
+            function css_init() {
+                var css = $("#mylink").get(0), skin = getQueryString("skin");
+                $("#skinSelect").val(skin);
+                $("#skinSelect").change(function () {
+                    if (this.value)
+                    {
+                        location.href = "index.htm?skin=" + this.value;
+                    } else
+                    {
+                        location.href = "index.htm";
+                    }
+                });
+                if (!css || !skin) return;
+                skin = skin.toLowerCase();
+                $('body').addClass("body-" + skin);
+                $(css).attr("href", skin_links[skin]);
+            }
+
+            function getQueryString(name){
+                var now_url = document.location.search.slice(1), q_array = now_url.split('&');
+                for (var i = 0; i < q_array.length; i++) {
+                    var v_array = q_array[i].split('=');
+                    if (v_array[0] == name) {
+                        return v_array[1];
+                    }
+                }
+                return false;
+            }
+
+            function attachLinkToFrame(iframeId, filename){
+                if(!window.frames[iframeId]) return;
+                var head = window.frames[iframeId].document.getElementsByTagName('head').item(0);
+                var fileref = window.frames[iframeId].document.createElement("link");
+                if (!fileref) return;
+                fileref.setAttribute("rel", "stylesheet");
+                fileref.setAttribute("type", "text/css");
+                fileref.setAttribute("href", filename);
+                head.appendChild(fileref);
+            }
+
+            function getLinkPrevHref(iframeId){
+                if (!window.frames[iframeId]) return;
+                var head = window.frames[iframeId].document.getElementsByTagName('head').item(0);
+                var links = $("link:first", head);
+                for (var i = 0; links[i]; i++)
+                {
+                    var href = $(links[i]).attr("href");
+                    if (href && href.toLowerCase().indexOf("ligerui") > 0)
+                    {
+                        return href.substring(0, href.toLowerCase().indexOf("lib") );
+                    }
+                }
+            }
+
+            $(function(){
+
+                // 判断浏览器版本是否为IE8，修复IE8首页无loading
+                if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/8./i)=="8."){
+                    $("#home").before('<div class="l-tab-loading" style="display: none;"></div>');
+                }
+
+                // 不为 iframe 指定初始的 src（可解决重复发送请求的问题），待父页面的 DOM 结构渲染完成时再加载内页
+                $("#home").prop("src", "./page/main_dwzcgly.htm");
+
+                // 对主流浏览器(IE10及以上)做禁用浏览器后退按钮操作
+                if(window.history && window.history.pushState){
+                    history.pushState(null, null, document.URL);
+                        window.addEventListener('popstate', function () {
+                            history.pushState(null, null, document.URL);
+                    });
+                }
+
+                // 待办事项自定义滚动条
+                $(".message_content").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: false,
+                        scrollType: "continuous",
+                        scrollSpeed: 20,
+                        scrollAmount: 40
+                    },
+                    horizontalScroll: false,
+                    scrollInertia: 200,
+                    autoHideScrollbar: true
+                });
+
+                // 重新登录切换
+                $(".system_mag").click(function(){
+                    $(".system_mag b").hide();
+                    $(".system_mag_item").slideToggle(100);
+                });
+                // 重新登录提示框显示隐藏
+                $(".system_mag").mouseenter(function(){
+                    if($(".system_mag_item").css("display") == "none"){
+                        $(this).find("b").show();
+                    }
+                }).mouseleave(function(){
+                    $(this).find("b").hide();
+                });
+
+                // 左侧面板动态调整高度
+                $("#accordion1, .l-accordion-content").height($(".l-layout-left").height());
+                window.onresize = function(){
+                    $("#accordion1, .l-accordion-content").height($(".l-layout-left").height());
+                }
+
+                // 待办事项打开事件
+                $(".message_todo span").click(function(){
+                    $(".message_list").fadeToggle(200);
+                });
+                // 待办事项关闭
+                $(".msg_action_close").click(function(){
+                    $(".message_list").fadeOut(100);
+                });
+
+
+                // 功能模块弹出页签
+                $(".gn_model .gn_item").click(function(){
+                    $(".gn_model .gn_item, .gn_model .gn_item_inner").removeClass("select");
+                    $(this).addClass("select").find(".gn_item_inner").addClass("select");
+                    var tabId = $(this).attr("gn_id");
+                    var tabName = $(this).find("a").html();
+                    window.f_addTab(tabId, tabName, "./page/1.html");
+                });
+
+                // 角色切换
+                $(".icon_sjx").click(function(){
+                    $(".user_work").toggleClass("open");
+                })
+
+                // 关于我们点击显示隐藏
+                $(".about").click(function(){
+                    if($(".zl_about").css("display") == "none"){
+                        $(".zl_about").show().animate({"top":"27%","opacity":"1"});
+                        $(".page_cover").fadeIn(100);
+                    }
+                })
+                $(".zl_about_close,.page_cover,.zl_bottom_close").click(function(){
+                    if($(".zl_about").css("display") == "block"){
+                        $(".zl_about").animate({"top":"10%","opacity":"0"},200,function(){
+                            $(this).hide();
+                        })
+                    }
+                    $(".page_cover").fadeOut(300);
+                });
+
+                // 全屏功能
+                $(".header_qpxs").click(function(){
+                    if($(this).attr("allscreen") == "not"){
+                        $(this).attr("allscreen","yes").css({"background-position":"0px -234px"}).children("b").html("退出全屏");
+                        requestFullScreen(document.documentElement);
+                    }else if($(this).attr("allscreen") == "yes"){
+                        $(this).attr("allscreen","not").css({"background-position":"0px -195px"}).children("b").html("全屏显示");
+                        exitFull();
+                    }
+                });
+            })
+
+            //全屏和退出全屏
+            function requestFullScreen(element) {
+                // 判断各种浏览器，找到正确的方法
+                var requestMethod = element.requestFullScreen || //W3C
+                element.webkitRequestFullScreen ||  //Chrome等
+                element.mozRequestFullScreen || //FireFox
+                element.msRequestFullScreen; //IE11
+                if (requestMethod) {
+                    requestMethod.call(element);
+                }
+                else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+                    }
+                }
+            }
+            function exitFull() {
+                // 判断各种浏览器，找到正确的方法
+                var exitMethod = document.exitFullscreen || //W3C
+                document.mozCancelFullScreen ||  //Chrome等
+                document.webkitExitFullscreen || //FireFox
+                document.webkitExitFullscreen; //IE11
+                if (exitMethod) {
+                    exitMethod.call(document);
+                }
+                else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                    }
+                }
+            }
+
+            //卡片弹出
+            function alertCard(params){
+            }
+		</script>
+	</body>
+</html>

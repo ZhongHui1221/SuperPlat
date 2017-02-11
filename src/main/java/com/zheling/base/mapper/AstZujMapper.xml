@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstZujMapper">
+
+	<resultMap id="zujMap" type="java.util.Map" />
+
+	<select id="callAstZujZujkpin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_ZUJ.ZUJKPIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cardrwid, mode=IN, jdbcType=VARCHAR},
+			#{loucid, mode=IN, jdbcType=VARCHAR},
+			#{fangjid, mode=IN, jdbcType=VARCHAR},
+			#{mianj, mode=IN, jdbcType=VARCHAR},
+			#{zujfs, mode=IN, jdbcType=VARCHAR},
+			#{sdate, mode=IN, jdbcType=VARCHAR},
+			#{edate, mode=IN, jdbcType=VARCHAR},
+			#{shzjcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sffz, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

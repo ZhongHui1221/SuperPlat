@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstCommonMapper">
+
+	<select id="findZcfl" resultType="com.zheling.base.entity.BdAstZicfl">
+		SELECT Z.RWID, Z.OBJCODE, Z.OBJNAME, Z.PARENTID,Z.PARENTS, Z.ZICDLID, Z.MODELID FROM BD_AST_ZICFL Z ORDER BY Z.OBJCODE
+	</select>
+
+	<select id="findRoles" resultType="com.zheling.base.entity.CoreRole">
+		SELECT RWID, OBJNAME, OBJCODE FROM CORE_ROLE WHERE OBJCODE NOT IN ('999', '007', '008', '009')
+	</select>
+	
+	<select id="findZhij" resultType="com.zheling.base.entity.BdAstZhij">
+		SELECT RWID, OBJNAME FROM BD_AST_ZHIJ ORDER BY SORTORDER
+	</select>
+
+	<select id="findChuzfs" resultType="com.zheling.base.entity.BdAstChuzfs">
+		SELECT RWID, OBJCODE, OBJNAME, PARENTID FROM BD_AST_CHUZFS WHERE RWID NOT IN ('3E499671E00000010B7433E82352D5E3') ORDER BY SORTORDER, PARENTS
+	</select>
+
+	<select id="findShiyzk" resultType="com.zheling.base.entity.BdAstShiyzk">
+		SELECT RWID, OBJCODE, OBJNAME, PARENTID FROM BD_AST_SHIYZK ORDER BY PARENTS, OBJCODE
+	</select>
+
+	<select id="findQudfs" resultType="com.zheling.base.entity.BdAstQudfs">
+		SELECT RWID, OBJCODE, OBJNAME FROM BD_AST_QUDFS ORDER BY OBJCODE
+	</select>
+
+	<select id="findYongt" resultType="com.zheling.base.entity.BdAstYongt">
+		SELECT RWID, OBJCODE, OBJNAME, PARENTID FROM BD_AST_YONGT ORDER BY PARENTS, SORTORDER
+	</select>
+
+	<select id="findCgxs" resultType="com.zheling.base.entity.BdAstCaigzzxs">
+		SELECT RWID, OBJCODE, OBJNAME FROM BD_AST_CAIGZZXS ORDER BY OBJCODE
+	</select>
+
+	<resultMap id="commonMap" type="java.util.Map" />
+
+	<select id="callAstCommonAuthq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.AUTHQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{enttype, mode=IN, jdbcType=VARCHAR},
+			#{restype, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=commonMap}
+		)
+	</select>
+
+	<select id="callAstCommonZidylq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.ZIDYLQ (
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=commonMap}
+		)
+	</select>
+
+	<select id="callAstCommonFujtpq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.FUJTPQ (
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{fujtpid, mode=IN, jdbcType=VARCHAR},
+			#{bsid, mode=IN, jdbcType=VARCHAR},
+			#{fileindex, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=commonMap}
+		)
+	</select>
+
+	<select id="callAstCommonFujtpin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.FUJTPIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{fujtpid, mode=IN, jdbcType=VARCHAR},
+			#{bsid, mode=IN, jdbcType=VARCHAR},
+			#{title, mode=IN, jdbcType=VARCHAR},
+			#{extension, mode=IN, jdbcType=VARCHAR},
+			#{fileindex, mode=IN, jdbcType=VARCHAR},
+			#{datatype, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstCommonFujtpout" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.FUJTPOUT (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{bsid, mode=IN, jdbcType=VARCHAR},
+			#{fileindex, mode=IN, jdbcType=VARCHAR},
+			#{datatype, mode=IN, jdbcType=VARCHAR},
+			#{shzkcode, mode=IN, jdbcType=VARCHAR},
+			#{querytype, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstCommonGetorg" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_COMMON.GETORG (
+			#{objcode, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=commonMap}
+		)
+	</select>
+
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.sup.query.mapper.WxqkMapper">
+
+	<resultMap id="wxqkMap" type="java.util.Map" />
+
+	<select id="callAstQueryWeixfyq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.WEIXFYQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{year,mode=IN,jdbcType=VARCHAR},
+			#{cxtype,mode=IN,jdbcType=INTEGER},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=wxqkMap}
+		)
+	</select>
+
+	<select id="callAstQueryWeixfymx" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_QUERY.WEIXFYMXQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{nd, mode=IN, jdbcType=VARCHAR},
+			#{yf, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=syztMap}
+		)
+	</select>
+
+</mapper>

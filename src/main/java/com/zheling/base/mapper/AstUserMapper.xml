@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstUserMapper">
+
+	<resultMap id="astUserMap" type="java.util.Map" />
+
+	<select id="callAstUserUserq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.USERQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR},
+			#{rwid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=astUserMap}
+		)
+	</select>
+
+	<select id="callAstUserUserin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.USERIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{zhanghm, mode=IN, jdbcType=VARCHAR},
+			#{objname, mode=IN, jdbcType=VARCHAR},
+			#{psw, mode=IN, jdbcType=VARCHAR},
+			#{shoujh, mode=IN, jdbcType=VARCHAR},
+			#{youx, mode=IN, jdbcType=VARCHAR},
+			#{diz, mode=IN, jdbcType=VARCHAR},
+			#{des, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{shenfzh, mode=IN, jdbcType=VARCHAR},
+			#{xingb, mode=IN, jdbcType=VARCHAR},
+			#{toux, mode=IN, jdbcType=VARCHAR},
+			#{needaudit, mode=IN, jdbcType=VARCHAR},
+			#{zhijid, mode=IN, jdbcType=VARCHAR},
+			#{shifzb, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstUserUserupd" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.USERUPD (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{yonghid, mode=IN, jdbcType=VARCHAR},
+			#{juesid, mode=IN, jdbcType=VARCHAR},
+			#{bumid, mode=IN, jdbcType=VARCHAR},
+			#{shoujh, mode=IN, jdbcType=VARCHAR},
+			#{zhijid, mode=IN, jdbcType=VARCHAR},
+			#{shifzb, mode=IN, jdbcType=VARCHAR},
+			#{oldpwd, mode=IN, jdbcType=VARCHAR},
+			#{newpwd, mode=IN, jdbcType=VARCHAR},
+			#{youx, mode=IN, jdbcType=VARCHAR},
+			#{diz, mode=IN, jdbcType=VARCHAR},
+			#{shenfzh, mode=IN, jdbcType=VARCHAR},
+			#{xingm, mode=IN, jdbcType=VARCHAR},
+			#{denglm, mode=IN, jdbcType=VARCHAR},
+			#{toux, mode=IN, jdbcType=VARCHAR},
+			#{xingb, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstUserUserout" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.USEROUT (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{userids, mode=IN, jdbcType=VARCHAR},
+			#{type, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstUserCunfddq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.CUNFDDQ (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{snum, mode=IN, jdbcType=VARCHAR},
+			#{enum, mode=IN, jdbcType=VARCHAR},
+			#{suosbmid, mode=IN, jdbcType=VARCHAR},
+			#{keyvalue, mode=IN, jdbcType=VARCHAR},
+			#{condsql, mode=IN, jdbcType=VARCHAR},
+			#{sortpart, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=astUserMap}
+		)
+	</select>
+
+	<select id="callAstUserCunfddin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.CUNFDDIN (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{objcode, mode=IN, jdbcType=VARCHAR},
+			#{objname, mode=IN, jdbcType=VARCHAR},
+			#{suosbmid, mode=IN, jdbcType=VARCHAR},
+			#{beiz, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstUserCunfddupd" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.CUNFDDUPD (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cunfddid, mode=IN, jdbcType=VARCHAR},
+			#{objcode, mode=IN, jdbcType=VARCHAR},
+			#{objname, mode=IN, jdbcType=VARCHAR},
+			#{suosbmid, mode=IN, jdbcType=VARCHAR},
+			#{beiz, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+	<select id="callAstUserCunfddout" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_USER.CUNFDDOUT (
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{userid, mode=IN, jdbcType=VARCHAR},
+			#{deptid, mode=IN, jdbcType=VARCHAR},
+			#{roleid, mode=IN, jdbcType=VARCHAR},
+			#{cunfddid, mode=IN, jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>

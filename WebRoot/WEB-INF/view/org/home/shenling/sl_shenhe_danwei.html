@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>审核-单位</title>
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="sl_shtu sl_sh_danwei">
+		<div class="sl_sh_danwei_cz">
+			<ul>
+				<li class="sh_return">退回</li>
+				<li class="sh_trial">送审</li>
+				<li class="sh_agree">同意</li>
+				<li class="sh_disagree">不同意</li>
+			</ul>
+		</div>
+	</div>
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script>
+		$('.sl_shtu li').hover(function(){
+			console.log('a')
+			$('.sl_sh_danwei div').attr('class','');
+			$('.sl_sh_danwei div').attr('class','sl_sh_danwei_cz '+$(this).attr('class'));
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>使用人-我要申领-待审核</title>
+	<link rel="stylesheet" href="../../framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+</head>
+<body>
+	<div class="container_card">
+		<div class="main_tabs">
+			<div class="container">
+				<ul class="main_tabs_list">
+					<li><a class="active" href="javascript:void(0)">待审核</a><span class="sanjx_jt active"></span></li>
+					<li><a href="./sl_shenhezhong.html">审核中</a><span class="sanjx_jt"></span></li>
+					<li><a  href="./sl_yishenhe.html">已审核</a><span class="sanjx_jt "></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_chosethis fl">
+						<label class="fl"><input id="chkThisPage" type="checkbox" /></label>
+						<div class="fl">选择当前页</div>
+					</div>
+					<div class="toobar_search fl">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+					<div class="toobar_moresearch fl">更多筛选条件</div>
+				</div>
+				<div class="toolbar_right fr">
+					<div class="toolbar_fy fl">
+						<ul>
+							<li class="toobar_jt toobar_jtll">
+								<a class="toobar_jtll_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtl">
+								<a class="toobar_jtl_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_pagenum"><input id="page_switch" type="text" value="1" /></li>
+							<li style="width: 10px">/</li>
+							<li>100</li>
+							<li class="toobar_jt toobar_jtr">
+								<a class="toobar_jtr_a" href="javascript:void(0)"></a>
+							</li>
+							<li class="toobar_jt toobar_jtrr">
+								<a class="toobar_jtrr_a" href="javascript:void(0)"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<ul class="shenl_action toolbar_left_list">
+						<li class="sl_zjslzc bumne"><a href="#">审核</a><span></span></li>
+						<!-- <li class="danwei toobar_line"></li>
+						<li class="danwei"><a href="#">申领</a><span></span></li> -->
+					</ul>
+				</div>
+				<div class="toolbar_right fr">
+					<ul class="gongneng_list fl">
+						<li class="toolbar_dc toolbar_item">导出<span></span></li>
+						<li class="toobar_line"></li>
+						<li class="toolbar_dy toolbar_item">打印 / 预览<span></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width=3%></col>
+						<col width=3%></col>
+						<col width=10%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=7%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=10%></col>
+						<col width=10%></col>
+						<col width=5%></col>
+						<col width=5%></col>
+					</colgroup>
+					<tr>
+						<td><div class="xuhao_header">序号</div></td>
+						<td></td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产分类
+								<span class="card_order_jt" column="SHENBDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt" column="CHUZFS"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								申报日期
+								<span class="card_order_jt" column="PIFDH"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								申报人
+								<span class="card_order_jt" column="PIFJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格要求
+								<span class="card_order_jt" column="PIFSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								预计单价(元)
+								<span class="card_order_jt" column="XUANZSL"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								申报数量
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								预计总价(元)
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								申领用途
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								申领原因
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+						<td class="sort" colspan="2">
+							<a href="javascript: void(0)">
+								业务操作
+								<span class="card_order_jt" column="XUANZJE"></span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width=3%></col>
+						<col width=3%></col>
+						<col width=10%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=7%></col>
+						<col width=7%></col>
+						<col width=8%></col>
+						<col width=8%></col>
+						<col width=10%></col>
+						<col width=10%></col>
+						<col width=5%></col>
+						<col width=5%></col>
+					</colgroup>
+					<tr >
+						<td class="xuhao">1</td>
+						<td class="list_td_label">
+							<label class="list_label fl"><input class="chk" type="checkbox" /></label>
+						</td>
+						<td>资产分类</td>
+						<td>资产名称</td>
+						<td>申报日期</td>
+						<td>申报人</td>
+						<td>规格要求</td>
+						<td>预计单价(元)</td>
+						<td>申报数量</td>
+						<td>预计总价(元)</td>
+						<td>申领用途</td>
+						<td>申领原因</td>
+						<td colspan="2"><a class="danwei" href="#">审核</a></td>
+						<!-- <td><a class="fr bumen" href="#">审核</a></td>
+						<td><a class="font_false bumen" href="#">驳回</a></td> -->
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="total_price">
+		<div class="container">
+			您所选的资产共计：<span id="total_number">0</span>&nbsp;条，金额共计：<span id="total_price">0.00</span>&nbsp;元
+		</div>
+	</div>
+	
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script>
+		$(function(){
+			setMaxheight(0);
+			$('.sl_zjslzc').click(function(){//增加申领资产
+				window.parent.alertPublicModal("申领资产分类","./page/syr_woyaoshenling/zcfl_cy.html");
+			});
+
+			$('.chk').click(function(){
+				
+			})
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+		// 卡片列表模式页面动态给列表赋值最大高度
+		function setMaxheight(hdeff) {
+			$(".list_wapper").height($(window).height() - 140 - hdeff);
+			$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+			if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+				$(".list_wapper_header").css("padding-right", "0");
+			} else {
+				$(".list_wapper_header").css("padding-right", "17px");
+			}
+		}
+
+	</script>
+</body>
+</html>

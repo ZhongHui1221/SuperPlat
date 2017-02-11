@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登账-待登账-填写登账信息</title>
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/iframe_org.css" />
+	<style>
+		.container_card{
+			min-height:395px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container_card">
+		<div class="toolbar_wapper container">
+			<div class="toolbar_box">
+				<div class="toolbar_left fl">
+					<div class="toobar_search fl" style="margin-left:0">
+						<form class="query_form" action="" method="post">
+							<input name="keyvalueStr" type="text" value="" />
+							<button class="toobar_search_btn" type="submit"><span></span></button>
+						</form>
+						<div class="searchcard_tip">请输入要查找的内容</div>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar_box">
+				<div class="toolbar_left">
+					<table class="table_dataedit_select">
+						<tr>
+							<td><span>*</span>财务入账日期:<input id="caiwrzrq_end" type="text"></td>
+							<td>
+								<span>*</span>价值类型：
+								<select>
+									<option value="">原值</option>
+									<option value="">暂估值</option>
+									<option value="">评估值</option>
+									<option value="">重置值</option>
+									<option value="">名义价值</option>
+								</select>
+							</td>
+							<td><span>*</span>会计凭证号：<input type="text"></td>
+							<td>发票号：<input type="text"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="list_wapper container">
+			<div class="list_wapper_header">
+				<table class="list_table_header">
+					<colgroup>
+						<col width=3%></col>
+						<col width=7%></col>
+						<col width=12%></col>
+						<col width=6%></col>
+						<col width=10%></col>
+						<col width=9%></col>
+						<col width=10%></col>
+						<col width=10%></col>
+						<col width=6%></col>
+						<col width=7%></col>
+						<col width=6%></col>
+						<col width=3%></col>
+						<col width=9%></col>
+					</colgroup>
+					<tr>
+						<td><div class="xuhao_header">序号</div></td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产名称
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								资产编号
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								规格型号
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								购置日期
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								预算项目编号
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								财务补贴收入
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								科教补贴收入
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								其他
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								折旧年限(月)
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								累计折旧
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								数量
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+						<td class="sort">
+							<a href="javascript: void(0)">
+								价值(元)
+								<span class="card_order_jt"></span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="list_wapper_content">
+				<table>
+					<colgroup>
+						<col width=3%></col>
+						<col width=7%></col>
+						<col width=12%></col>
+						<col width=6%></col>
+						<col width=10%></col>
+						<col width=9%></col>
+						<col width=10%></col>
+						<col width=10%></col>
+						<col width=6%></col>
+						<col width=7%></col>
+						<col width=6%></col>
+						<col width=3%></col>
+						<col width=9%></col>
+					</colgroup>
+					<tr >
+						<td class="xuhao">1</td>
+						<td><a href="">资产名称</a></td>
+						<td>资产编号</td>
+						<td>规格型号</td>
+						<td>购置日期</td>
+						<td>预算项目编号</td>
+						<td>财务补贴收入</td>
+						<td>科教补贴收入</td>
+						<td>其他</td>
+						<td>折旧年限(月)</td>
+						<td>累计折旧</td>
+						<td>数量</td>
+						<td>价值(元)</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../../framework/ligerui-lib/jquery/jquery-1.9.0.min.js"></script>
+	<script>
+		$(function(){
+			setMaxheight(0);
+			$('.main_tabs_list li').click(function(){
+				$('.main_tabs_list li').find('a,span').removeClass('active');
+				$(this).find('a,span').addClass('active');
+			})
+		})
+		window.onresize = function(){
+			setMaxheight(0);
+		}
+		// 卡片列表模式页面动态给列表赋值最大高度
+		function setMaxheight(hdeff) {
+			$(".list_wapper").height($(window).height() - 140 - hdeff);
+			$(".list_wapper .list_wapper_content").height($(".list_wapper").height() - 50);
+			if ($(".list_wapper_content").height() > $(".list_wapper_content table").height()) {
+				$(".list_wapper_header").css("padding-right", "0");
+			} else {
+				$(".list_wapper_header").css("padding-right", "17px");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../framework/ligerui-lib/ligerUI/skins/Aqua/css/ligerui-all.css" />
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/iframe_org.css" />
+	<link rel="stylesheet" href="../framework/ztree/css/zTreeStyle/zTreeStyle.css" />
+	<title>公告管理 - 发布消息</title>
+	<style>
+		body{position: relative;}
+		.gggl_header{margin-bottom: 0px;}
+	</style>
+</head>
+<body>
+	<div class="gggl_header">
+		<ul class="gggl_tabs">
+			<li class="gggl_lb"><a href="./gongggl_list.html">公告列表</a><span></span></li>
+			<li class="gggl_xx select"><a href="">发布消息</a><span></span></li>
+		</ul>
+	</div>
+	<form action="" name="">
+		<div class="gggl_wapper">
+			<div class="gonggao_edit">
+				<div class="gonggao_title">
+					<textarea form="" placeholder="公告标题"></textarea>
+				</div>
+				<div class="gonggao_detail">
+					<textarea form="" placeholder="正文"></textarea>
+				</div>
+				<div class="gonggao_addfj">
+					<!-- 需要使用swfupload插件实现 -->
+					<a class="add_fujian" href="">文件上传</a>
+				</div>
+				<div class="gonggao_filelist">
+
+				</div>
+				<div class="gonggao_lastdate">
+					<div class="gonggao_ld_f">公告失效日期：</div>
+					<input type="text" name="" id="gonggao_date">
+					<div class="gonggao_ld_l">该公告到期将失效</div>
+				</div>
+			</div>
+			<div class="gonggao_people">
+				<div class="gonggao_p_title">接收人员：</div>
+				<div class="gonggao_select">
+					<div class="gonggao_tree_wapper">
+						<div class="zTreeDemoBackground left">
+							<ul id="danwei_tree" class="ztree"></ul>
+						</div>
+					</div>
+					<div class="gonggo_people">
+						<ul>
+							<li><label><input type="checkbox" name=""></label><span>一笑奈何</span></li>
+							<li><label><input type="checkbox" name=""></label><span>一笑奈何</span></li>
+							<li><label><input type="checkbox" name=""></label><span>一笑奈何</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gggl_bottom">
+			<div class="iframe_btn gggl_btn_qx">取消</div>
+			<input class="iframe_btn gggl_btn_qd" type="button" name="" value="发布" />
+		</div>
+	</form>
+	<script src="../framework/ligerui-lib/jquery/jquery-1.4.4.min.js"></script>
+	<script src="../framework/ztree/js/jquery.ztree.core.js"></script>
+	<script src="../framework/ztree/js/jquery.ztree.excheck.js"></script>
+	<script src="../framework/ligerui-lib/ligerUI/js/core/base.js"></script>
+	<script src="../framework/ligerui-lib/ligerUI/js/plugins/ligerDateEditor.js"></script>
+	<script>
+		// 接收人员单位树配置(ztree插件)
+		var setting = {
+			check: {
+				enable: true
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			}
+		};
+
+		// 数据格式
+		var zNodes = [
+						{name: "父节点1", open: true, children: [
+							{name: "子节点1"},
+							{name: "子节点2", open: true, children:[
+								{name: "子节点111"},
+								{name: "子节点111"},
+								{name: "子节点111"}
+
+							]}
+						]}
+					];
+
+		$(function(){
+
+			// 生成单位树
+			$.fn.zTree.init($("#danwei_tree"), setting, zNodes);
+
+			// 生成日历
+			$("#gonggao_date").ligerDateEditor();
+
+			// 取消发布按钮
+			$(".gggl_btn_qx").click(function(){
+
+			});
+
+			// 发布
+			$(".gggl_btn_qd").click(function(){
+
+			})
+		});
+	</script>
+</body>
+</html>

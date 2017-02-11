@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.org.distribution.mapper.SlpzMapper">
+
+	<resultMap id="SlpzMap" type="java.util.Map" />
+	
+	<select id="callAstPeizPznumq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PEIZ.PZNUMQ(
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{pzzt,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR},
+			#{P_DS,mode=OUT,jdbcType=CURSOR,resultMap=SlpzMap}
+		)
+	</select>
+	
+	<select id="callAstPeizPzq" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PEIZ.PZQ(
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{snum,mode=IN,jdbcType=VARCHAR},
+			#{enum,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{pzzt,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR},
+			#{sortpart,mode=IN,jdbcType=VARCHAR},
+			#{P_DS,mode=OUT,jdbcType=CURSOR,resultMap=SlpzMap}
+		)
+	</select>
+	
+	<select id="callAstPeizPzin" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PEIZ.PZIN(
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{bsrwid,mode=IN,jdbcType=VARCHAR},
+			#{zicmc,mode=IN,jdbcType=VARCHAR},
+			#{zicflid,mode=IN,jdbcType=VARCHAR},
+			#{guigxh,mode=IN,jdbcType=VARCHAR},
+			#{yujdj,mode=IN,jdbcType=VARCHAR},
+			#{yujjz,mode=IN,jdbcType=VARCHAR},
+			#{shul,mode=IN,jdbcType=VARCHAR},
+			#{shenqbmid,mode=IN,jdbcType=VARCHAR},
+			#{shenqrid,mode=IN,jdbcType=VARCHAR},
+			#{shenlyy,mode=IN,jdbcType=VARCHAR},
+			#{shenlytid,mode=IN,jdbcType=VARCHAR},
+			#{P_DS,mode=OUT,jdbcType=CURSOR,resultMap=SlpzMap}
+		)
+	</select>
+	
+	<select id="callAstPeizPzout" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PEIZ.PZOUT(
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{peizdid,mode=IN,jdbcType=VARCHAR},
+			#{pzzt,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR}
+		)
+	</select>
+	
+	<select id="callAstPeizSubmit" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_PEIZ.SUBMIT(
+			#{orgid,mode=IN,jdbcType=VARCHAR},
+			#{userid,mode=IN,jdbcType=VARCHAR},
+			#{deptid,mode=IN,jdbcType=VARCHAR},
+			#{roleid,mode=IN,jdbcType=VARCHAR},
+			#{peizdid,mode=IN,jdbcType=VARCHAR},
+			#{keyvalue,mode=IN,jdbcType=VARCHAR},
+			#{condsql,mode=IN,jdbcType=VARCHAR},
+			#{pzzt,mode=IN,jdbcType=VARCHAR},
+			#{wfzt,mode=IN,jdbcType=VARCHAR},
+			#{shenpyj,mode=IN,jdbcType=VARCHAR}
+		)
+	</select>
+	
+	<select id="findYongt" resultType="com.zheling.base.entity.BdAstYongt">
+		SELECT RWID,OBJCODE,OBJNAME,PARENTID FROM BD_AST_YONGT ORDER BY PARENTS,SORTORDER
+	</select>
+
+</mapper>

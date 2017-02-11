@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheling.base.mapper.AstZicflMapper">
+
+	<resultMap id="AstZicflMap" type="java.util.Map" />
+	
+	<select id="callAstZicflQcybyparentid"  parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_ZICFL.QCYBYPARENTID(
+			#{parentid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=AstZicflMap}
+		)
+	</select>
+	
+	<select id="callAstZicflQuickq"  parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_ZICFL.QUICKQ(
+			#{orgid, mode=IN, jdbcType=VARCHAR},
+			#{isfullname, mode=IN, jdbcType=VARCHAR},
+			#{key, mode=IN, jdbcType=VARCHAR},
+			#{cnt, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=AstZicflMap}
+		)
+	</select>
+	
+	<select id="callAstZicflQbyparentid" parameterType="java.util.Map" statementType="CALLABLE">
+		call AST_ZICFL.QBYPARENTID(
+			#{parentid, mode=IN, jdbcType=VARCHAR},
+			#{P_DS, mode=OUT, jdbcType=CURSOR, resultMap=AstZicflMap}
+		)
+	</select>
+	
+	<select id="findZcdls" resultType="com.zheling.base.entity.BdAstZicdl">
+		SELECT RWID,OBJCODE,OBJNAME FROM BD_AST_ZICDL ORDER BY OBJCODE
+	</select>
+
+</mapper>
